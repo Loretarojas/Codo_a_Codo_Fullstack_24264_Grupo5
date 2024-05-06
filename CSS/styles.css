@@ -7,7 +7,7 @@
 .nav-index {
     color: blueviolet;
     font-size: 15px;
-    text-align: center;
+    text-align: right;
     background-color: white;
 }
 .main-index {
@@ -27,7 +27,8 @@
     color: white;
     background-color:blueviolet;
     padding: 20px;
-    text-align: center}
+    text-align: center
+}
 
 .main-contact{
         max-width: 400px; 
@@ -37,6 +38,7 @@
         display: block; 
         margin-bottom: 15px;
     }
+} 
     
     button {
         background-color: blueviolet;
@@ -45,4 +47,17 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+}
+
+/*Estilos para BUTTERFLIES*/
+.header-butterflies {
+    color: white;
+    background-color:blueviolet;
+    padding: 20px;
+    text-align: center
+}
+.nav-butterflies {
+    color: white;
+    font-size: 15px;
+    text-align: right;
 }
