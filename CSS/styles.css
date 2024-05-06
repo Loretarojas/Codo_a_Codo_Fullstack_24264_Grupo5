@@ -2,3 +2,47 @@
     margin:0;
     padding:0;
 }
+
+/*Estilos para INDEX*/ 
+.nav-index {
+    color: blueviolet;
+    font-size: 15px;
+    text-align: center;
+    background-color: white;
+}
+.main-index {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+/*Estilos para CONTACT*/
+.nav-contact {
+    color: white;
+    font-size: 15px;
+    text-align: right;
+}
+.header-contact {
+    color: white;
+    background-color:blueviolet;
+    padding: 20px;
+    text-align: center}
+
+.main-contact{
+        max-width: 400px; 
+        margin: 0 auto;
+    
+    label, input, textarea, select, button, div {
+        display: block; 
+        margin-bottom: 15px;
+    }
+    
+    button {
+        background-color: blueviolet;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
