@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="icon" href="../img/logo.ico">
 </head>
-<body>
+<body class="body">
     <header class="header-contact">
         <nav class="nav-contact">
-            <a href="../index.html">Home</a>
+            <a class="pages" href="../index.html">Home</a>
          </nav>
-        <h1>Formulario de Contacto</h1>
+
     </header>
 
-    <main class="main-contact">
-        <form id="formularioContacto" onsubmit="validarFormulario(event)">
+    <main class="main-pages">
+        <h1 class="title">Formulario de Contacto</h1>
+        <form class="form-contact" id="formularioContacto" onsubmit="validarFormulario(event)">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 

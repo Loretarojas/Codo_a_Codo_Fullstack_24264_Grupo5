@@ -3,34 +3,70 @@
     padding:0;
 }
 
-/*Estilos para INDEX*/ 
-.nav-index {
-    color: blueviolet;
-    font-size: 15px;
-    text-align: right;
-    background-color: white;
+html, body {
+    min-height: 100%;
 }
-.main-index {
+
+.body{
+    background-image: linear-gradient(rgb(221, 143, 233), rgb(193, 173, 202));
+    background-repeat: no-repeat;
+}
+.pages {
+    padding: 15px;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.title {
     color: white;
     font-size: 24px;
     text-align: center;
+    padding: 25px;
+}
+
+
+/*Estilos para INDEX*/ 
+
+.nav-index {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    background-color: rgb(166, 103, 224);
+}
+#menu {
+    visibility: hidden;
+}
+#label {
+    visibility: hidden;
+}
+
+
+.nav-index a:hover {
+    color: white;
+}
+
+.main-index {
     background-color: blueviolet;
 }
+
 
 /*Estilos para CONTACT*/
 .nav-contact {
     color: white;
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: right;
-}
-.header-contact {
-    color: white;
-    background-color:blueviolet;
-    padding: 20px;
-    text-align: center
+    padding: 15px;
+    
 }
 
-.main-contact{
+
+.form-contact{
         max-width: 400px; 
         margin: 0 auto;
     
@@ -50,14 +86,75 @@
 }
 
 /*Estilos para BUTTERFLIES*/
-.header-butterflies {
-    color: white;
-    background-color:blueviolet;
-    padding: 20px;
-    text-align: center
-}
+
 .nav-butterflies {
     color: white;
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: right;
+    padding: 15px;
+    
+}
+
+/*Estilos para ABOUT*/
+.nav-about {
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    padding: 15px;
+    
+}
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        background: lightgrey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+@media only screen and (min-width: 1920px) {
+    ul {
+        display: flex;
+    }
 }

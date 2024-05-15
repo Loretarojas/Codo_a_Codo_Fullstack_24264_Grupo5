@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="icon" href="../img/logo.ico"> 
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="icon" href="./img/logo.ico"> 
     <title>Document</title>
 </head>
-<body>
+<body class="body-index">
     <header class="header-index">
         <nav class="nav-index">
-            <a href="./pages/about.html">Acerca de</a>
-            <a href="./pages/contact.html">Contacto</a>
-            <a href="./pages/butterflies.html">Plantas y Mariposas</a>
-        </nav>
+            <input type="checkbox" id="menu">
+            <label for="menu" id="label"> ☰ </label>
+            <ul id="lista">
+                <li class = "pages"><a  href="./pages/about.html">Acerca de Nosotros</a></li>
+                <li class = "pages"><a  href="./pages/contact.html">Contacto</a></li>
+                <li class = "pages"><a  href = "./pages/butterflies.html" href="./pages/butterflies.html">Plantas y Mariposas</a></li>
+            </ul>
+
     </header>
     <main class="main-index">
-        <h1>Fluttersearch</h1>
+        <h1 class="title">Fluttersearch</h1>
     </main>
     
     <footer class="footer-index">
