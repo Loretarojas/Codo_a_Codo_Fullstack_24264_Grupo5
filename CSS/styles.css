@@ -11,6 +11,10 @@ html, body {
     background-image: linear-gradient(rgb(197, 107, 210), rgb(216, 196, 225));
     background-repeat: no-repeat;
 }
+body header nav ul a {
+    text-decoration: none;
+    color: white;
+}
 .pages {
     padding: 15px;
     list-style: none;
