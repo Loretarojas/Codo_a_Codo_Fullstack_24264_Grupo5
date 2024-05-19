@@ -1,0 +1,248 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+.pages-about {
+    padding: 15px;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.pages-about:hover{
+    background-color: #0056b3;
+}
+
+.header-index {
+    transition: all 1s;
+}
+
+.header-index:hover {
+    transform: scale(1.1);
+}
+
+
+/*Estilos para ABOUT*/
+
+.title-about {
+    text-align: center;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px; 
+} 
+/* Estilos para la sección de colaboradores */
+.colaboradores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.persona {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #223649;
+    color: white;
+}
+
+.persona img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.persona h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.persona p {
+    font-size: 14px;
+    color: white;
+}
+
+/* Estilos adicionales */
+.body-about {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+} 
+
+.header-about {
+    background-color: #223649;
+    padding: 10px 0;
+}
+
+.nav-about {
+    text-align: center;
+}
+
+.nav-about a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.main-pages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #223649;
+}
+
+.contenido-about {
+    margin-bottom: 20px;
+    margin-top: 100px;
+    line-height: 1.5;
+    color: white;
+    background-color: #223649;
+    padding: 20px;
+}
+
+
+
+
+
+/* Estilos para footer*/
+.footer {
+    background-color: #223649;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+
+body footer {
+    position: static;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
+.footer-icons {
+    padding-bottom: 25px;
+}
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        background: lightgrey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+.footer {
+    margin-top: 1rem;
+    background-color: rgb(29, 64, 84);
+    /* height: 20vh; */
+  }
+  .footer__list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer__list__item {
+    display: flex;
+    list-style: none;
+    max-width: 10vw;
+    margin: 0rem 2rem;
+  }
+  
+  .footer__list__item__link {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer__list__item__link:hover {
+    color: var(--color-comprar-tickets);
+  }
+  

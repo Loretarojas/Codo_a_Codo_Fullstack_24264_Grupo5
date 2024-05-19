@@ -1,0 +1,307 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+.pages {
+    padding: 15px;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.header-index {
+    transition: all 1s;
+}
+
+.header-index:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* Estilos para CONTACT */
+
+.body-contact {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+} 
+
+.title-contact {
+    text-align: center;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px; 
+}
+
+.form-contact {
+    color: white;
+    max-width: 500px;
+    margin: 150px auto 50px auto; 
+    padding: 60px;
+    background-color: #223649;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(91, 48, 48, 0.1);
+}
+
+.form-contact label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-contact input[type="text"],
+.form-contact input[type="email"],
+.form-contact textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-contact textarea {
+    resize: vertical;
+}
+
+.form-contact button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #314b64;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-contact button:hover {
+    background-color: #0056b3;
+}
+
+.form-contact .error,
+.form-contact .success {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-contact .error {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.form-contact .success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.pages-contact {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #223649; 
+    color: white;
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.1s;
+    text-align: center;
+}
+
+.pages-contact:hover{
+    background-color: #0056b3;
+}
+
+.form-contact label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilos para el checkbox y su etiqueta */
+.form-contact input[type="checkbox"],
+.form-contact label[for="interes"] {
+    display: inline-block;
+    vertical-align: middle; /* Alineación vertical */
+}
+
+.form-contact label[for="info"] {
+    margin-right: 30px; /* Espacio entre el checkbox y la etiqueta */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Estilos para los elementos de radio y sus etiquetas */
+.radio-group input[type="radio"],
+.radio-group label {
+    display: inline-block;
+    vertical-align: middle; /* Alineación vertical */
+}
+
+.radio-group label {
+    margin-right: 10px; /* Espacio entre los botones de radio y las etiquetas */
+}
+
+/* Estilos para el select */
+.form-contact select {
+    width: calc(100% - 10px); /* Ajuste del ancho para compensar el espacio del botón de radio */
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+.form-contact button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #314b64;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio adicional entre el select y el botón */
+}
+
+.form-contact button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para footer*/
+.footer {
+    background-color: #223649;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+
+body footer {
+    position: static;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
+.footer-icons {
+    padding-bottom: 25px;
+}
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        background: lightgrey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+.footer {
+    margin-top: 1rem;
+    background-color: rgb(29, 64, 84);
+    /* height: 20vh; */
+  }
+  .footer__list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer__list__item {
+    display: flex;
+    list-style: none;
+    max-width: 10vw;
+    margin: 0rem 2rem;
+  }
+  
+  .footer__list__item__link {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer__list__item__link:hover {
+    color: var(--color-comprar-tickets);
+  }
+  

@@ -1,0 +1,273 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+.pages-index {
+    padding: 15px;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.header-index {
+    transition: all 1s;
+}
+
+.header-index:hover {
+    transform: scale(1.1);
+}
+
+/*Estilos para INDEX*/ 
+.main-index {
+    position: relative;
+}
+
+.nav-index {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px;
+    background-color:#223649;
+}
+.nav-index a {
+    color: white}
+
+#menu {
+    visibility: hidden;
+}
+#label {
+    visibility: hidden;
+}
+
+
+.nav-index a:hover {
+    color: rgb(0,50,100);
+}
+
+.text-mainindex{
+
+}
+
+
+/*Estilos para BANNER*/
+#banner-index {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.504);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: calc(100vh - 25px);
+    color: aliceblue;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .title-index {
+    position: absolute;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    text-align: center;
+}
+
+  .banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 31%;
+  }
+
+
+.boton-bajar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #223649;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-bajar:hover {
+    background-color: #0056b3;
+}
+
+#segunda-seccion {
+    padding: 50px 20px;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+#segunda-seccion h2 {
+    margin-top: 0;
+}
+
+.contenedor-index{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-index{
+    width: 45%;
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.item-index img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.item-index p {
+    margin-top: 15px;
+}
+
+
+
+/* Estilos para footer*/
+.footer {
+    background-color: #223649;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+
+body footer {
+    position: static;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
+.footer-icons {
+    padding-bottom: 25px;
+}
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        background: lightgrey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+.footer {
+    margin-top: 1rem;
+    background-color: rgb(29, 64, 84);
+    /* height: 20vh; */
+  }
+  .footer__list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer__list__item {
+    display: flex;
+    list-style: none;
+    max-width: 10vw;
+    margin: 0rem 2rem;
+  }
+  
+  .footer__list__item__link {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer__list__item__link:hover {
+    color: var(--color-comprar-tickets);
+  }
+  
