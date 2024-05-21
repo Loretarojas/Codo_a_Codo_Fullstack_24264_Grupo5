@@ -1,19 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const plantas = [
-        { nombre: 'Verbena', tipo: 'exterior', tamano: 'pequeño', vida: 'anual' },
-        { nombre: 'Coneflower', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Buddleja', tipo: 'exterior', tamano: 'grande', vida: 'perenne' },
-        { nombre: 'Asclepia', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Verbena', tipo: 'exterior', tamano: 'pequeño', vida: 'perenne' },
-        { nombre: 'Salvia', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Mariposario', tipo: 'exterior', tamano: 'grande', vida: 'perenne' },
-        { nombre: 'Milenrama', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Coreopsis', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Zinnia', tipo: 'exterior', tamano: 'pequeño', vida: 'anual' },
-        { nombre: 'Menta', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Echinacea', tipo: 'exterior', tamano: 'mediano', vida: 'perenne' },
-        { nombre: 'Caléndula', tipo: 'exterior', tamano: 'mediano', vida: 'anual' },
-    ];
 
     const mariposas = [
         { nombre: 'Monarca', tamano: 'grande', colores: 'naranja', vida: 'media', reproduccion: 'medio', migracion: 'si' },
@@ -25,23 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { nombre: 'Mariposa monarca', tamano: 'grande', colores: 'naranja y negro', vida: 'media', reproduccion: 'medio', migracion: 'si' },
         { nombre: 'Mariposa aleta de golondrina', tamano: 'pequeno', colores: 'azul y negro', vida: 'corta', reproduccion: 'corto', migracion: 'no' }
     ];
-
-    const filtrarResultadosPlantas = () => {
-        console.log("Buscando plantas...");
-        
-        const tipoPlanta = document.querySelector('#tipo-planta').value;
-        const tamanoPlanta = document.querySelector('#tamano-planta').value;
-        const vidaPlanta = document.querySelector('#vida-planta').value;
-
-        const plantasFiltradas = plantas.filter(planta => {
-            return (tipoPlanta === '' || planta.tipo === tipoPlanta) &&
-                   (tamanoPlanta === '' || planta.tamano === tamanoPlanta) &&
-                   (vidaPlanta === '' || planta.vida === vidaPlanta);
-        });
-
-        const plantResults = document.querySelector('#plant-results');
-        plantResults.innerHTML = plantasFiltradas.map(planta => `<p>${planta.nombre}</p>`).join('');
-    };
 
     const filtrarResultadosMariposas = () => {
         const tamanoMariposa = document.querySelector('#tamano-mariposa').value;
@@ -62,6 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
         butterflyResults.innerHTML = mariposasFiltradas.map(mariposa => `<p>${mariposa.nombre}</p>`).join('');
     };
 
-    document.querySelector('#buscar-plantas').addEventListener('click', filtrarResultadosPlantas);
     document.querySelector('#buscar-mariposas').addEventListener('click', filtrarResultadosMariposas);
 });

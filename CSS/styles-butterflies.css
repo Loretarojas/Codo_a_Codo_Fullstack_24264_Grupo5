@@ -1,6 +1,7 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -15,8 +16,10 @@ html, body {
     padding: 15px;
     list-style: none;
 }
+
 a {
     text-decoration: none;
+    color: white;
 }
 
 .header-index {
@@ -27,32 +30,43 @@ a {
     transform: scale(1.1);
 }
 
-body-butterflies {
+.body-butterflies {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-.body-butterflies {
+body {
     background-image: url("../IMG/fondo.jpeg");
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-} 
+}
 
 .container {
     width: 80%;
     margin: 20px auto;
-    background-color: #223649;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1 {
     text-align: center;
     color: white;
     padding: 20px;
+}
+
+.search-section,
+.advanced-search-container {
+    background-color: #223649;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-section h2,
+.advanced-search-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .filters {
@@ -68,41 +82,22 @@ h1, h2 {
 
 label {
     font-weight: bold;
-    color: #555;
+    color: white;
 }
 
-select {
+input[type="text"] {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
     transition: border-color 0.3s ease;
+    margin-bottom: 10px;
 }
 
-select:focus {
+input[type="text"]:focus {
     border-color: #007bff;
 }
-
-/* Estilo para el botón de búsqueda */
-.search-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #030f1b;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search-button:hover {
-    background-color: #0056b3;
-}
-
 
 button {
     display: block;
@@ -115,80 +110,25 @@ button {
     margin-top: 10px;
     cursor: pointer;
     font-size: 16px;
-}
-
-/* Estilo para la sección de búsqueda de plantas y mariposas */
-.search-section {
-    background-color: #223649;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para el título de la sección de búsqueda */
-.search-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Estilo para el campo de entrada de búsqueda */
-.search-section input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    outline: none;
-}
-
-/* Estilo para el botón de búsqueda */
-.search-section button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #030f1b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
-.search-section button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* Estilo para el contenedor de resultados de búsqueda */
 .search-results {
     margin-top: 10px;
-    max-height: 200px; 
-    overflow-y: auto; }
-
-/* Estilo para los resultados individuales de la búsqueda */
-.search-result {
-    margin-bottom: 10px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
-/* Estilo para las imágenes de búsqueda */
-.search-result img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
-    display: inline-block;
-}
-
-/* Estilos para footer*/
 .footer {
     background-color: #223649;
     color: white;
     text-align: center;
     padding: 20px 0;
+    margin-top: 1rem;
 }
 
 .footer p {
@@ -203,104 +143,3 @@ button {
     color: white;
     margin: 0 5px;
 }
-
-
-body footer {
-    position: static;
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    
-}
-.footer-icons {
-    padding-bottom: 25px;
-}
-.icons {
-    margin-right: 5px;
-    margin-left: 5px;
-    text-decoration: none;
-    color: white;
-}
-
-@media only screen and (max-width: 768px) {
-    
-    #menu {
-        visibility: visible;
-    }
-    #label {
-        visibility: visible;
-    }
-    ul{
-        display: none;
-      }
-     
-      
-      input:checked  ~ ul{
-        display:block;
-      }
-      input {
-        display: none;
-       }
-       label {
-        box-sizing: border-box;
-        display: inline-block;
-        border: 1px solid white;
-        border-radius: 5px;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        font-weight: bold;
-        text-align: center;
-        user-select: none;
-      }
-      li {
-        display: block;
-        background: lightgrey;
-        margin: 0;
-        padding: 10px;
-        list-style: none;
-        border-bottom: 1px solid grey;
-      }
-    
-}
-
-@media only screen and (min-width: 768px) {
-        ul {
-            display: flex;
-        }
-}
-
-.footer {
-    margin-top: 1rem;
-    background-color: white;
-    /* height: 20vh; */
-  }
-  .footer__list {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .footer__list__item {
-    display: flex;
-    list-style: none;
-    max-width: 10vw;
-    margin: 0rem 2rem;
-  }
-  
-  .footer__list__item__link {
-    color: white;
-    text-decoration: none;
-    margin: 0.5rem 1rem;
-  }
-  
-  .footer__list__item__link:hover {
-    color: var(--color-comprar-tickets);
-  }
- 

@@ -13,162 +13,82 @@
     <header class="header-butterflies">
         <nav class="nav-butterflies">
             <a class="pages" href="../index.html">Home</a>
-         </nav>
+        </nav>
     </header>
     <main class="main-pages">
+        <div class="container">
+            <h1>Buscador de Mariposas</h1>
+            
+            <!-- Contenedor de la sección de búsqueda de mariposas por nombre -->
+            <div class="search-section">
+                <!-- Apartado de búsqueda de mariposas por nombre -->
+                <div class="section" id="mariposas">
+                    <h2>Buscar Mariposas por Nombre</h2>
+                    <input type="text" id="butterfly-search-input" placeholder="Ingrese el nombre de la mariposa">
+                    <button id="butterfly-search-button">Buscar</button>
+                    <div id="butterfly-search-results" class="search-results"></div>
+                </div>
+            </div>
+            
+            <!-- Contenedor de la sección de búsqueda avanzada de mariposas -->
+            <div class="advanced-search-container">
+                <div class="section" id="mariposas">
+                    <div class="search-title">
+                        <h2>Búsqueda avanzada Mariposas</h2>
+                    </div> 
+                    <div class="filters">
+                        <!-- Filtro de Familia del Insecto -->
+                        <div class="filter">
+                            <label for="familia-insecto">Familia del Insecto:</label>
+                            <input type="text" id="familia-insecto" placeholder="Ingrese la familia del insecto">
+                        </div>
+
+                        <!-- Filtro de Género del Insecto -->
+                        <div class="filter">
+                            <label for="genero-insecto">Género del Insecto:</label>
+                            <input type="text" id="genero-insecto" placeholder="Ingrese el género del insecto">
+                        </div>
+                        
+                        <!-- Filtro de Especie del Insecto -->
+                        <div class="filter">
+                            <label for="especie-insecto">Especie del Insecto:</label>
+                            <input type="text" id="especie-insecto" placeholder="Ingrese la especie del insecto">
+                        </div>
+                        
+                        <!-- Filtro de Ubicación -->
+                        <div class="filter">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" id="ubicacion" placeholder="Ingrese la ubicación">
+                        </div>
+                    </div>
+                    <button id="buscar-mariposas">Buscar</button>
+                    <div id="butterfly-results" class="results"></div>
+                </div>
+            </div>
+        </div>
     </main>
-    <div class="container">
-      <h1>Buscador de Plantas para Mariposas y de Mariposas</h1>
-      
-      <!-- Apartado de Plantas para Mariposas -->
-      <div class="section" id="plantas">
-          <h2>Plantas para Mariposas</h2>
-          <div class="filters">
-              <!-- Filtro de Interior/Exterior -->
-              <div class="filter">
-                  <label for="tipo-planta">Tipo de Planta:</label>
-                  <select id="tipo-planta">
-                      <option value="">Seleccionar</option>
-                      <option value="interior">Interior</option>
-                      <option value="exterior">Exterior</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Tamaño -->
-              <div class="filter">
-                  <label for="tamano-planta">Tamaño de Planta:</label>
-                  <select id="tamano-planta">
-                      <option value="">Seleccionar</option>
-                      <option value="pequeno">Pequeño (0-30 cm)</option>
-                      <option value="mediano">Mediano (31-100 cm)</option>
-                      <option value="grande">Grande (101 cm en adelante)</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Tiempo de Vida -->
-              <div class="filter">
-                  <label for="vida-planta">Tiempo de Vida:</label>
-                  <select id="vida-planta">
-                      <option value="">Seleccionar</option>
-                      <option value="anual">Anual</option>
-                      <option value="perenne">Perenne</option>
-                  </select>
-              </div>
-          </div>
-          <button id="buscar-plantas">Buscar</button>
-          <div id="plant-results" class="results">
-          </div>
-      </div>
-      
-      <!-- Apartado de Mariposas -->
-      <div class="section" id="mariposas">
-          <h2>Mariposas</h2>
-          <div class="filters">
-              <!-- Filtro de Tamaño -->
-              <div class="filter">
-                  <label for="tamano-mariposa">Tamaño:</label>
-                  <select id="tamano-mariposa">
-                      <option value="">Seleccionar</option>
-                      <option value="pequeno">Pequeño (0-5 cm)</option>
-                      <option value="mediano">Mediano (5-10 cm)</option>
-                      <option value="grande">Grande (10 cm en adelante)</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Colores -->
-              <div class="filter">
-                  <label for="colores-mariposa">Colores:</label>
-                  <select id="colores-mariposa">
-                      <option value="">Seleccionar</option>
-                      <option value="rojo">Rojo</option>
-                      <option value="naranja">Naranja</option>
-                      <option value="amarillo">Amarillo</option>
-                      <option value="verde">Verde</option>
-                      <option value="azul">Azul</option>
-                      <option value="morado">Morado</option>
-                      <option value="negro">Negro</option>
-                      <option value="blanco">Blanco</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Tiempo de Vida -->
-              <div class="filter">
-                  <label for="vida-mariposa">Tiempo de Vida:</label>
-                  <select id="vida-mariposa">
-                      <option value="">Seleccionar</option>
-                      <option value="corta">Corta (0-1 mes)</option>
-                      <option value="media">Media (1-6 meses)</option>
-                      <option value="larga">Larga (6 meses en adelante)</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Tiempo de Reproducción y Desarrollo -->
-              <div class="filter">
-                  <label for="reproduccion-mariposa">Tiempo de Reproducción y Desarrollo:</label>
-                  <select id="reproduccion-mariposa">
-                      <option value="">Seleccionar</option>
-                      <option value="corto">Corto (0-1 mes)</option>
-                      <option value="medio">Medio (1-3 meses)</option>
-                      <option value="largo">Largo (3 meses en adelante)</option>
-                  </select>
-              </div>
-              
-              <!-- Filtro de Migración -->
-              <div class="filter">
-                  <label for="migracion-mariposa">Migración:</label>
-                  <select id="migracion-mariposa">
-                      <option value="">Seleccionar</option>
-                      <option value="si">Sí</option>
-                      <option value="no">No</option>
-                  </select>
-              </div>
-          </div>
-          <button id="buscar-mariposas">Buscar</button>
-          <div id="butterfly-results" class="results">
-          </div>
-      </div>
-  </div>
-
-  <!-- Sección de búsqueda de plantas por nombre -->
-<div class="search-section">
-  <h2>Buscar Plantas por Nombre</h2>
-  <input type="text" id="plant-search-input" placeholder="Ingrese el nombre de la planta">
-  <button id="plant-search-button">Buscar</button>
-  <div id="plant-search-results" class="search-results">
-  </div>
-</div>
-
-<!-- Sección de búsqueda de mariposas por nombre -->
-<div class="search-section">
-  <h2>Buscar Mariposas por Nombre</h2>
-  <input type="text" id="butterfly-search-input" placeholder="Ingrese el nombre de la mariposa">
-  <button id="butterfly-search-button">Buscar</button>
-  <div id="butterfly-search-results" class="search-results">
-  </div>
-</div>
 
     <footer>
         <span>
             <p>&copy; 2024 - Fluttersearch</p>
         </span>
         <div class="footer-icons">
-            <a href="#"  class="icons">
-                <i  class="fa-brands fa-twitter"></i>
+            <a href="#" class="icons">
+                <i class="fa-brands fa-twitter"></i>
             </a>
-              <a href="#" class="icons">
+            <a href="#" class="icons">
                 <i class="fa-brands fa-square-facebook"></i>
-              </a>
-              <a href="#" class="icons">
+            </a>
+            <a href="#" class="icons">
                 <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="#" class="icons">
+            </a>
+            <a href="#" class="icons">
                 <i class="fa-regular fa-envelope"></i>
-              </a>
-              <a href="#" class="icons">
+            </a>
+            <a href="#" class="icons">
                 <i class="fa-solid fa-phone"></i>
-              </a>
+            </a>
         </div>
     </footer>
-    
 </body>
 </html>
