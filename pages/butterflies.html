@@ -7,6 +7,7 @@
     <link rel="icon" href="../img/logo.ico">
     <script src="https://kit.fontawesome.com/7500b894af.js" crossorigin="anonymous"></script>
     <title>Butterflies</title>
+    <script src="../JS/butterflies.js"></script>
 </head>
 <body class="body-butterflies">
     <header class="header-butterflies">
@@ -53,6 +54,9 @@
                       <option value="perenne">Perenne</option>
                   </select>
               </div>
+          </div>
+          <button id="buscar-plantas">Buscar</button>
+          <div id="plant-results" class="results">
           </div>
       </div>
       
@@ -119,8 +123,30 @@
                   </select>
               </div>
           </div>
+          <button id="buscar-mariposas">Buscar</button>
+          <div id="butterfly-results" class="results">
+          </div>
       </div>
   </div>
+
+  <!-- Sección de búsqueda de plantas por nombre -->
+<div class="search-section">
+  <h2>Buscar Plantas por Nombre</h2>
+  <input type="text" id="plant-search-input" placeholder="Ingrese el nombre de la planta">
+  <button id="plant-search-button">Buscar</button>
+  <div id="plant-search-results" class="search-results">
+  </div>
+</div>
+
+<!-- Sección de búsqueda de mariposas por nombre -->
+<div class="search-section">
+  <h2>Buscar Mariposas por Nombre</h2>
+  <input type="text" id="butterfly-search-input" placeholder="Ingrese el nombre de la mariposa">
+  <button id="butterfly-search-button">Buscar</button>
+  <div id="butterfly-search-results" class="search-results">
+  </div>
+</div>
+
     <footer>
         <span>
             <p>&copy; 2024 - Fluttersearch</p>

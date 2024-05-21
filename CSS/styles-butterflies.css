@@ -92,7 +92,7 @@ select:focus {
     margin-top: 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #030f1b;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -104,20 +104,84 @@ select:focus {
 }
 
 
-
-/*Estilos para BUTTERFLIES*/
-
-.nav-butterflies {
-    color: white;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: right;
-    padding: 15px;
-    
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #030f1b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
+/* Estilo para la sección de búsqueda de plantas y mariposas */
+.search-section {
+    background-color: #223649;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+/* Estilo para el título de la sección de búsqueda */
+.search-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
 
+/* Estilo para el campo de entrada de búsqueda */
+.search-section input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #030f1b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el contenedor de resultados de búsqueda */
+.search-results {
+    margin-top: 10px;
+    max-height: 200px; 
+    overflow-y: auto; }
+
+/* Estilo para los resultados individuales de la búsqueda */
+.search-result {
+    margin-bottom: 10px;
+}
+
+/* Estilo para las imágenes de búsqueda */
+.search-result img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+}
 
 /* Estilos para footer*/
 .footer {
