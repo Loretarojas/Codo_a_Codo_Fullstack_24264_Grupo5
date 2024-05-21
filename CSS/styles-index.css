@@ -56,10 +56,6 @@ a {
     color: rgb(0,50,100);
 }
 
-.text-mainindex{
-
-}
-
 
 /*Estilos para BANNER*/
 #banner-index {
@@ -216,7 +212,7 @@ body footer {
        label {
         box-sizing: border-box;
         display: inline-block;
-        border: 1px solid black;
+        border: 1px solid white;
         border-radius: 5px;
         width: 30px;
         height: 30px;
@@ -270,4 +266,3 @@ body footer {
   .footer__list__item__link:hover {
     color: var(--color-comprar-tickets);
   }
-  

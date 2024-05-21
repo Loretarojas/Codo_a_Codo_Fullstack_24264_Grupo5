@@ -27,7 +27,81 @@ a {
     transform: scale(1.1);
 }
 
+body-butterflies {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+.body-butterflies {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+} 
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #223649;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #007bff;
+}
+
+/* Estilo para el botón de búsqueda */
+.search-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
 
 
 
@@ -86,7 +160,7 @@ body footer {
     margin-right: 5px;
     margin-left: 5px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 @media only screen and (max-width: 768px) {
@@ -111,7 +185,7 @@ body footer {
        label {
         box-sizing: border-box;
         display: inline-block;
-        border: 1px solid black;
+        border: 1px solid white;
         border-radius: 5px;
         width: 30px;
         height: 30px;
@@ -139,7 +213,7 @@ body footer {
 
 .footer {
     margin-top: 1rem;
-    background-color: rgb(29, 64, 84);
+    background-color: white;
     /* height: 20vh; */
   }
   .footer__list {
@@ -165,4 +239,4 @@ body footer {
   .footer__list__item__link:hover {
     color: var(--color-comprar-tickets);
   }
-  
+ 
