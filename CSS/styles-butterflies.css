@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ENCABEZADO HOME **/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
 html {
@@ -12,26 +14,52 @@ html, body {
     min-height: 100%;
 }
 
-.pages {
-    padding: 15px;
-    list-style: none;
+.pages-common {
+    text-align: center;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px;
 }
 
 a {
     text-decoration: none;
+}
+.pages-common:hover{
+    background-color: #0056b3;
+}
+
+.header-common {
+    background-color: #223649;
+    padding: 10px 0;
+}
+
+.nav-common {
+    text-align: center;
+    padding:5px;
+    border-radius: 10px;
+}
+
+.nav-common a {
     color: white;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
-.header-index {
-    transition: all 1s;
-}
-
-.header-index:hover {
-    transform: scale(1.1);
+.title-butterflies {
+    text-align: center;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px; 
 }
 
 .body-butterflies {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Condensed', serif;
 }
 
 body {
@@ -51,6 +79,8 @@ h1 {
     text-align: center;
     color: white;
     padding: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .search-section,
@@ -67,6 +97,8 @@ h1 {
 .advanced-search-container h2 {
     text-align: center;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 .filters {
@@ -123,23 +155,95 @@ button:hover {
     overflow-y: auto;
 }
 
-.footer {
-    background-color: #223649;
-    color: white;
+
+ 
+/* Estilos para footer*/
+
+
+
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        background: lightgrey;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+
+.footer-common {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 1rem;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px
 }
 
-.footer p {
+.footer-content {
+    background-color: #223649;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.footer-common p {
     margin: 0;
+    
 }
 
-.footer-icons {
-    margin-top: 10px;
+.footer-common .footer-icons {
+    margin-top: 20px;
+}
+
+.footer-common.icons {
+    color: white;
+    margin: 0 5px;
 }
 
 .icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
     color: white;
-    margin: 0 5px;
 }

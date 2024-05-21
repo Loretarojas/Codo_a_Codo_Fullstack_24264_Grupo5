@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ENCABEZADO HOME **/
 * {
     margin:0;
     padding:0;
@@ -11,37 +14,49 @@ html, body {
     min-height: 100%;
 }
 
-.pages-about {
-    padding: 15px;
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-.pages-about:hover{
-    background-color: #0056b3;
-}
-
-.header-index {
-    transition: all 1s;
-}
-
-.header-index:hover {
-    transform: scale(1.1);
-}
-
-
-/*Estilos para ABOUT*/
-
-.title-about {
+.pages-common {
     text-align: center;
     color: white;
     margin-top: 10px; 
     margin-bottom: 20px;
     background-color: #223649;
     padding:5px; 
-    border-radius: 10px; 
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+.pages-common:hover{
+    background-color: #0056b3;
+}
+
+.header-common {
+    background-color: #223649;
+    padding: 10px 0;
+}
+
+.nav-common {
+    text-align: center;
+    padding:5px;
+    border-radius: 10px;
+}
+
+.nav-common a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.body-about {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    font-family: 'Roboto Condensed', serif;
 } 
+
+
 /* Estilos para la sección de colaboradores */
 .colaboradores {
     display: flex;
@@ -76,40 +91,21 @@ a {
     color: white;
 }
 
-/* Estilos adicionales */
-.body-about {
-    background-image: url("../IMG/fondo.jpeg");
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-} 
-
-.header-about {
-    background-color: #223649;
-    padding: 10px 0;
-}
-
-.nav-about {
-    text-align: center;
-}
-
-.nav-about a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
 .main-pages {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.title {
+.title-about {
     text-align: center;
-    margin-top: 10px;
+    color: white;
+    margin-top: 10px; 
     margin-bottom: 20px;
-    color: #223649;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif; 
 }
 
 .contenido-about {
@@ -122,52 +118,9 @@ a {
 }
 
 
-
-
-
 /* Estilos para footer*/
-.footer {
-    background-color: #223649;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer p {
-    margin: 0;
-}
-
-.footer-icons {
-    margin-top: 10px;
-}
-
-.icons {
-    color: white;
-    margin: 0 5px;
-}
 
 
-body footer {
-    position: static;
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    
-}
-.footer-icons {
-    padding-bottom: 25px;
-}
-.icons {
-    margin-right: 5px;
-    margin-left: 5px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
 
 @media only screen and (max-width: 768px) {
     
@@ -217,32 +170,41 @@ body footer {
         }
 }
 
-.footer {
-    margin-top: 1rem;
-    background-color: rgb(29, 64, 84);
-    /* height: 20vh; */
-  }
-  .footer__list {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .footer__list__item {
-    display: flex;
-    list-style: none;
-    max-width: 10vw;
-    margin: 0rem 2rem;
-  }
-  
-  .footer__list__item__link {
+
+.footer-common {
+    text-align: center;
     color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px
+}
+
+.footer-content {
+    background-color: #223649;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.footer-common p {
+    margin: 0;
+    
+}
+
+.footer-common .footer-icons {
+    margin-top: 20px;
+}
+
+.footer-common.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
     text-decoration: none;
-    margin: 0.5rem 1rem;
-  }
-  
-  .footer__list__item__link:hover {
-    color: var(--color-comprar-tickets);
-  }
-  
+    color: white;
+}

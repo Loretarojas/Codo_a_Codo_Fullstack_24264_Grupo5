@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin:0;
     padding:0;
@@ -81,6 +83,15 @@ a {
     transform: translateX(-50%);
     font-size: 48px;
     text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+h3 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
 }
 
   .banner__content {
