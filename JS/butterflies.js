@@ -1,34 +1,57 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    let mariposas = [];
 
-    const mariposas = [
-        { nombre: 'Monarca', tamano: 'grande', colores: 'naranja', vida: 'media', reproduccion: 'medio', migracion: 'si' },
-        { nombre: 'Blanca de la col', tamano: 'pequeno', colores: 'blanco', vida: 'corta', reproduccion: 'corto', migracion: 'no' },
-        { nombre: 'Mariposa almirante', tamano: 'mediano', colores: 'negro y rojo', vida: 'media', reproduccion: 'medio', migracion: 'no' },
-        { nombre: 'Mariposa julia', tamano: 'mediano', colores: 'naranja y negro', vida: 'media', reproduccion: 'medio', migracion: 'no' },
-        { nombre: 'Mariposa espejitos', tamano: 'pequeno', colores: 'azul y naranja', vida: 'corta', reproduccion: 'medio', migracion: 'no' },
-        { nombre: 'Mariposa tigre', tamano: 'pequeno', colores: 'negro y amarillo', vida: 'corta', reproduccion: 'corto', migracion: 'no' },
-        { nombre: 'Mariposa monarca', tamano: 'grande', colores: 'naranja y negro', vida: 'media', reproduccion: 'medio', migracion: 'si' },
-        { nombre: 'Mariposa aleta de golondrina', tamano: 'pequeno', colores: 'azul y negro', vida: 'corta', reproduccion: 'corto', migracion: 'no' }
-    ];
+    // Cargar datos del archivo JSON
+    fetch('../data/mariposas.json')
+        .then(response => response.json())
+        .then(data => {
+            mariposas = data;
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
 
-    const filtrarResultadosMariposas = () => {
-        const tamanoMariposa = document.querySelector('#tamano-mariposa').value;
-        const coloresMariposa = document.querySelector('#colores-mariposa').value;
-        const vidaMariposa = document.querySelector('#vida-mariposa').value;
-        const reproduccionMariposa = document.querySelector('#reproduccion-mariposa').value;
-        const migracionMariposa = document.querySelector('#migracion-mariposa').value;
+    // Función de búsqueda avanzada
+    document.getElementById('buscar-mariposas').addEventListener('click', () => {
+        const familiaBotanica = document.getElementById('familia-botanica').value.toLowerCase();
+        const generoPlanta = document.getElementById('genero-planta').value.toLowerCase();
+        const especiePlanta = document.getElementById('especie-planta').value.toLowerCase();
+        const familiaInsecto = document.getElementById('familia-insecto').value.toLowerCase();
+        const generoInsecto = document.getElementById('genero-insecto').value.toLowerCase();
+        const especieInsecto = document.getElementById('especie-insecto').value.toLowerCase();
+        const ubicacion = document.getElementById('ubicacion').value.toLowerCase();
 
-        const mariposasFiltradas = mariposas.filter(mariposa => {
-            return (tamanoMariposa === '' || mariposa.tamano === tamanoMariposa) &&
-                   (coloresMariposa === '' || mariposa.colores === coloresMariposa) &&
-                   (vidaMariposa === '' || mariposa.vida === vidaMariposa) &&
-                   (reproduccionMariposa === '' || mariposa.reproduccion === reproduccionMariposa) &&
-                   (migracionMariposa === '' || mariposa.migracion === migracionMariposa);
+        const resultados = mariposas.filter(mariposa => {
+            return (!familiaBotanica || (mariposa["Familia Botánica"] && mariposa["Familia Botánica"].toLowerCase().includes(familiaBotanica))) &&
+                   (!generoPlanta || (mariposa["Género de la planta"] && mariposa["Género de la planta"].toLowerCase().includes(generoPlanta))) &&
+                   (!especiePlanta || (mariposa["Especie de la planta"] && mariposa["Especie de la planta"].toLowerCase().includes(especiePlanta))) &&
+                   (!familiaInsecto || (mariposa["Familia del Insecto"] && mariposa["Familia del Insecto"].toLowerCase().includes(familiaInsecto))) &&
+                   (!generoInsecto || (mariposa["Género del Insecto"] && mariposa["Género del Insecto"].toLowerCase().includes(generoInsecto))) &&
+                   (!especieInsecto || (mariposa["Especie del Insecto"] && mariposa["Especie del Insecto"].toLowerCase().includes(especieInsecto))) &&
+                   (!ubicacion || (mariposa["Ubicación"] && mariposa["Ubicación"].toLowerCase().includes(ubicacion)));
         });
 
-        const butterflyResults = document.querySelector('#butterfly-results');
-        butterflyResults.innerHTML = mariposasFiltradas.map(mariposa => `<p>${mariposa.nombre}</p>`).join('');
-    };
+        mostrarResultados(resultados, 'butterfly-results');
+    });
 
-    document.querySelector('#buscar-mariposas').addEventListener('click', filtrarResultadosMariposas);
+    // Función para mostrar resultados
+    function mostrarResultados(resultados, contenedorId) {
+        const contenedorResultados = document.getElementById(contenedorId);
+        contenedorResultados.innerHTML = '';
+
+        if (resultados.length > 0) {
+            resultados.forEach(mariposa => {
+                const div = document.createElement('div');
+                div.classList.add('result-item');
+                div.textContent = `Familia Botánica: ${mariposa["Familia Botánica"]}, 
+                                    Género de la planta: ${mariposa["Género de la planta"]}, 
+                                    Especie de la planta: ${mariposa["Especie de la planta"]}, 
+                                    Familia del Insecto: ${mariposa["Familia del Insecto"]}, 
+                                    Género del Insecto: ${mariposa["Género del Insecto"]}, 
+                                    Especie del Insecto: ${mariposa["Especie del Insecto"]}, 
+                                    Ubicación: ${mariposa["Ubicación"]}`;
+                contenedorResultados.appendChild(div);
+            });
+        } else {
+            contenedorResultados.innerHTML = '<div class="result-item">No se encontraron resultados</div>';
+        }
+    }
 });

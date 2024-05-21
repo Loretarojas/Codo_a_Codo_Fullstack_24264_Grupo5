@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Butterflies</title>
-    <script src="../JS/butterflies.js"></script>
+    <script defer src="../JS/butterflies.js"></script>
 </head>
 <body class="body-butterflies">
     <header class="header-common">
@@ -25,8 +25,8 @@
             <div class="search-section">
                 <!-- Apartado de búsqueda de mariposas por nombre -->
                 <div class="section" id="mariposas">
-                    <h2>Buscar Mariposas por Nombre</h2>
-                    <input type="text" id="butterfly-search-input" placeholder="Ingrese el nombre de la mariposa">
+                    <h2>Búsqueda por palabra</h2>
+                    <input type="text" id="butterfly-search-input" placeholder="Ingrese la palabra clave">
                     <button id="butterfly-search-button">Buscar</button>
                     <div id="butterfly-search-results" class="search-results"></div>
                 </div>
@@ -36,9 +36,27 @@
             <div class="advanced-search-container">
                 <div class="section" id="mariposas">
                     <div class="search-title">
-                        <h2>Búsqueda avanzada Mariposas</h2>
+                        <h2>Búsqueda avanzada</h2>
                     </div> 
                     <div class="filters">
+                        <!-- Filtro de Familia Botánica -->
+                        <div class="filter">
+                            <label for="familia-botanica">Familia Botánica:</label>
+                            <input type="text" id="familia-botanica" placeholder="Ingrese la familia botánica">
+                        </div>
+
+                        <!-- Filtro de Género de la planta -->
+                        <div class="filter">
+                            <label for="genero-planta">Género de la planta:</label>
+                            <input type="text" id="genero-planta" placeholder="Ingrese el género de la planta">
+                        </div>
+
+                        <!-- Filtro de Especie de la planta -->
+                        <div class="filter">
+                            <label for="especie-planta">Especie de la planta:</label>
+                            <input type="text" id="especie-planta" placeholder="Ingrese de la planta">
+                        </div>
+
                         <!-- Filtro de Familia del Insecto -->
                         <div class="filter">
                             <label for="familia-insecto">Familia del Insecto:</label>
@@ -50,18 +68,19 @@
                             <label for="genero-insecto">Género del Insecto:</label>
                             <input type="text" id="genero-insecto" placeholder="Ingrese el género del insecto">
                         </div>
-                        
+
                         <!-- Filtro de Especie del Insecto -->
                         <div class="filter">
                             <label for="especie-insecto">Especie del Insecto:</label>
                             <input type="text" id="especie-insecto" placeholder="Ingrese la especie del insecto">
-                        </div>
+                        </div> 
                         
                         <!-- Filtro de Ubicación -->
                         <div class="filter">
                             <label for="ubicacion">Ubicación:</label>
                             <input type="text" id="ubicacion" placeholder="Ingrese la ubicación">
                         </div>
+                        
                     </div>
                     <button id="buscar-mariposas">Buscar</button>
                     <div id="butterfly-results" class="results"></div>
