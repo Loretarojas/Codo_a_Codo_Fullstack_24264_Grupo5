@@ -68,12 +68,17 @@ a {
     border-radius: 10px;
     font-family: 'Playfair Display', serif; 
 }
+.container {
+    width: 40%;
+    margin: 20px auto;
+    padding: 20px;
+}
 
 .form-contact {
     color: white;
     max-width: 500px;
-    margin: 150px auto 50px auto; 
-    padding: 60px;
+    margin: 50px auto 50px auto; 
+    padding: 50px;
     background-color: #223649;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(91, 48, 48, 0.1);
