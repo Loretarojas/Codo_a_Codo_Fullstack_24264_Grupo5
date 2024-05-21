@@ -58,11 +58,13 @@ a {
     color: rgb(0,50,100);
 }
 
+.body-index {
+    background-image: url("../IMG/fondo.jpeg");
+}
 
 /*Estilos para BANNER*/
 #banner-index {
-    background-image: url("../IMG/fondo.jpeg");
-    background-size: cover;
+    
     background-color: rgba(0, 0, 0, 0.504);
     background-blend-mode: darken;
     background-repeat: no-repeat;
@@ -120,40 +122,82 @@ h3 {
 
 #segunda-seccion {
     padding: 50px 20px;
-    background-color: #e9ecef;
+    background-color: rgba(88, 85, 60, 0.9);
     text-align: center;
 }
 
 #segunda-seccion h2 {
     margin-top: 0;
+    color: #e7f8ed;
+    margin-bottom: 20px;
+}
+
+#segunda-seccion p {
+    margin-top: 0;
+    color: #e7f8ed;
+    margin-bottom: 20px;
 }
 
 .contenedor-index{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 70px;
+    
 }
 
-.item-index{
-    width: 45%;
+.item-index {
+    width: calc(25% - 40px);
     margin: 10px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
 
 .item-index img {
-    width: 100%;
+    max-width: 50%;
     height: auto;
-    border-radius: 10px;
+
 }
 
 .item-index p {
     margin-top: 15px;
 }
+.info {
+    margin-top: 10px;
+    font-size: 15px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: justify;
+    color: #e7f8ed;
+    margin: 20 auto;
+}
 
+.boton-busqueda {
+    display: inline-block;
+    background-color: #223649;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+.boton-busqueda:hover {
+    transform: scale(1.1);
+}
+     
+
+.contenedor-boton-busqueda {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #223649;
+    max-width: 70%;
+    padding: 0.5em 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
 
 
 /* Estilos para footer*/
@@ -176,7 +220,6 @@ h3 {
     color: white;
     margin: 0 5px;
 }
-
 
 body footer {
     position: static;
@@ -251,8 +294,7 @@ body footer {
 
 .footer {
     margin-top: 1rem;
-    background-color: rgb(29, 64, 84);
-    /* height: 20vh; */
+    background-color: #223649;
   }
   .footer__list {
     display: flex;
@@ -272,8 +314,9 @@ body footer {
     color: white;
     text-decoration: none;
     margin: 0.5rem 1rem;
+    padding: 0.5em 1em;
   }
   
   .footer__list__item__link:hover {
-    color: var(--color-comprar-tickets);
-  }
+        transform: scale(1.1);
+    }
