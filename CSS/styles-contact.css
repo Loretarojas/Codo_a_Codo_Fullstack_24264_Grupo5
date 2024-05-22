@@ -196,7 +196,43 @@ a {
 
 /* Estilos para footer*/
 
+.footer-common {
+    text-align: center;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px
+}
 
+.footer-content {
+    background-color: #223649;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.footer-common p {
+    margin: 0;
+    
+}
+
+.footer-common .footer-icons {
+    margin-top: 20px;
+}
+
+.footer-common.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+}
 @media only screen and (max-width: 768px) {
     
     #menu {
@@ -243,43 +279,4 @@ a {
         ul {
             display: flex;
         }
-}
-
-
-.footer-common {
-    text-align: center;
-    color: white;
-    margin-top: 10px; 
-    margin-bottom: 20px;
-    background-color: #223649;
-    padding:5px; 
-    border-radius: 10px
-}
-
-.footer-content {
-    background-color: #223649;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 20px 10px;
-}
-
-.footer-common p {
-    margin: 0;
-    
-}
-
-.footer-common .footer-icons {
-    margin-top: 20px;
-}
-
-.footer-common.icons {
-    color: white;
-    margin: 0 5px;
-}
-
-.icons {
-    margin-right: 5px;
-    margin-left: 5px;
-    text-decoration: none;
-    color: white;
 }

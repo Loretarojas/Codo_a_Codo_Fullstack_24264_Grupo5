@@ -55,7 +55,7 @@ a {
 
 
 .nav-index a:hover {
-    color: rgb(0,50,100);
+    color: rgb(96, 139, 182);
 }
 
 .body-index {
@@ -201,22 +201,35 @@ h3 {
 
 
 /* Estilos para footer*/
-.footer {
-    background-color: #223649;
-    color: white;
+.footer-common {
     text-align: center;
-    padding: 20px 0;
+    color: white;
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding:5px; 
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 }
 
-.footer p {
-    margin: 0;
+.footer-content {
+    background-color: #223649;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 10px;
 }
+
 
 .footer-icons {
     margin-top: 10px;
+    padding-bottom: 25px;
 }
 
 .icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
     color: white;
     margin: 0 5px;
 }
@@ -233,15 +246,8 @@ body footer {
     margin-top: 30px;
     
 }
-.footer-icons {
-    padding-bottom: 25px;
-}
-.icons {
-    margin-right: 5px;
-    margin-left: 5px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
+
+
 
 
 @media only screen and (max-width: 768px) {
