@@ -87,6 +87,24 @@ a {
     text-align: center;
     font-family: 'Playfair Display', serif;
 }
+
+.img1{
+    height: 35px;
+    width: 35px;
+    animation: move 105s infinite 14s, rotate 2s infinite 5s;
+}
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 h3 {
     text-align: center;
     color: white;
@@ -211,6 +229,9 @@ h3 {
     border-radius: 10px;
     margin-top: 50px;
     margin-bottom: 0px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 .footer-content {
@@ -233,7 +254,9 @@ h3 {
     color: white;
     margin: 0 5px;
 }
-
+#symbol:hover {
+    transform: scale(2.1);
+}
 body footer {
     position: static;
     display: flex;

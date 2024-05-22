@@ -248,3 +248,7 @@ button:hover {
     text-decoration: none;
     color: white;
 }
+
+#symbol:hover {
+    transform: scale(2.1);
+}
