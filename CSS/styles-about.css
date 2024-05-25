@@ -120,57 +120,6 @@ a {
 
 /* Estilos para footer*/
 
-
-
-@media only screen and (max-width: 768px) {
-    
-    #menu {
-        visibility: visible;
-    }
-    #label {
-        visibility: visible;
-    }
-    ul{
-        display: none;
-      }
-     
-      
-      input:checked  ~ ul{
-        display:block;
-      }
-      input {
-        display: none;
-       }
-       label {
-        box-sizing: border-box;
-        display: inline-block;
-        border: 1px solid black;
-        border-radius: 5px;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-        font-weight: bold;
-        text-align: center;
-        user-select: none;
-      }
-      li {
-        display: block;
-        background: lightgrey;
-        margin: 0;
-        padding: 10px;
-        list-style: none;
-        border-bottom: 1px solid grey;
-      }
-    
-}
-
-@media only screen and (min-width: 768px) {
-        ul {
-            display: flex;
-        }
-}
-
-
 .footer-common {
     text-align: center;
     color: white;
@@ -212,3 +161,52 @@ a {
 #symbol:hover {
     transform: scale(2.1);
 }
+
+@media only screen and (max-width: 768px) {
+    
+    #menu {
+        visibility: visible;
+    }
+    #label {
+        visibility: visible;
+    }
+    ul{
+        display: none;
+      }
+     
+      
+      input:checked  ~ ul{
+        display:block;
+      }
+      input {
+        display: none;
+       }
+       label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+      }
+      li {
+        display: block;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+      }
+    
+}
+
+@media only screen and (min-width: 768px) {
+        ul {
+            display: flex;
+        }
+}
+
+

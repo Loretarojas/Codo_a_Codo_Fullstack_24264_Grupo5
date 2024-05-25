@@ -276,7 +276,17 @@ a {
         list-style: none;
         border-bottom: 1px solid grey;
       }
-    
+      .container {
+        display: inline;
+      }
+      .form-contact label {
+        display: contents;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .form-contact input[type="text"] {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 768px) {
