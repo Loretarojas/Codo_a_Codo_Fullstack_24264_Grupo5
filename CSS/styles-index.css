@@ -11,6 +11,7 @@ html {
 
 html, body {
     min-height: 100%;
+
 }
 
 .pages-index {
@@ -60,6 +61,7 @@ a {
 
 .body-index {
     background-image: url("../IMG/fondo.jpeg");
+   
 }
 
 /*Estilos para BANNER*/
@@ -67,7 +69,6 @@ a {
     
     background-color: rgba(0, 0, 0, 0.504);
     background-blend-mode: darken;
-    background-repeat: no-repeat;
     background-position: bottom;
     height: calc(100vh - 25px);
     color: aliceblue;
@@ -288,16 +289,18 @@ h3 {
 
 
 
-@media only screen and (max-width: 768px) {
+@media  (max-width: 768px) {
     html, body {
-        min-height: 100%;
+        
+       overflow-x: hidden;
     }
     .body-index {
-        display: inline-block;
-        width:inherit;
+        background-image: url("../IMG/fondo.jpeg");
+       
     }
+   
     .header-index {
-        width: 100%;
+        width: 100vw;
     }
     .nav-index {
         display: flex;
@@ -306,7 +309,7 @@ h3 {
         font-size: 15px;
         font-family: Arial, Helvetica, sans-serif;
         padding: 25px;
-        padding-left: 25px;
+        padding-left: 55px;
         background-color:#223649;
         width: 100%;
     }
@@ -354,17 +357,17 @@ h3 {
         background-color:#315577;
     }
     .main-index {
-        width: 100%;
+        display: flow-root;
     }
       .title-index {
         position: relative;
-        top: 50px; 
+        top: 50px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 48px;
+        font-size: 28px;
         text-align: center;
         font-family: 'Playfair Display', serif;
-        display: inline-flex;
+        display: flex;
         align-items: flex-end;
         margin-bottom: 50px;
         padding-left: 30px;
@@ -391,7 +394,7 @@ h3 {
         padding: 20px 30px;
       }
       #banner-index {
-         display: inline-block;
+         display: block;
       }
       .banner__content {
         display: inline;
@@ -416,7 +419,7 @@ h3 {
         width: 100%;
       }
       .footer__list_p-3 {
-        display: flex;
+        display: grid;
         align-items: center;
       }
      
