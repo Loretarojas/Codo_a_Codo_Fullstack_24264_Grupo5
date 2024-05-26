@@ -290,17 +290,17 @@ h3 {
 /*Button top */
 .go-top-container {
     position: fixed;
+    top: 525px;
     bottom: 4rem;
     right: 4rem;
-    width: 6.6rem;
-    height: 6.6rem;
-    z-index: -1;
+    width: 4.6rem;
+    height: 4.6rem;
 }
 
 .go-top-button {
     width: 0rem;
     height: 0rem;
-    background: #e7f8ed;
+    background: #f0f8ff3d;
     border-radius: 50%;
     cursor: pointer;
     transition: .2s;
@@ -310,13 +310,13 @@ h3 {
     z-index: -1;
 }
 
-.go-top.button i{
+.go-top-button i{
     position: absolute;
     font-size: 1.7rem;
     top: 40%;
     left: 50%;
     transform: translate(-500%, -500%) scale(0);
-    color: #e7f8ed;
+    color: #0c484b;
     transition: .2s;
 }
 .show {
@@ -325,8 +325,8 @@ h3 {
 
 .show .go-top-button{
     animation: popup .3s ease-in-out;
-    width: 6.6rem;
-    height: 6.6rem;
+    width: 4.6rem;
+    height: 4.6rem;
     z-index: 11;
 }
 
@@ -503,7 +503,15 @@ h3 {
       .footer__list__item__link:hover {
             transform: scale(1.1);
         }
-     
+        .go-top-container {
+            right: 0.2rem;
+            width: 2.6rem;
+        }
+        .show .go-top-button {
+             width: 3.6rem;
+            height: 3.6rem;
+        }
+       
 }   
 
 
