@@ -128,23 +128,28 @@
             </ul>
           </div>
     </footer>
-   
-    <script>
-      function getRandomPhoto() {
-          fetch('/random-photo')
-              .then(response => response.blob())
-              .then(blob => {
-                  const imgElement = document.getElementById('photo');
-                  imgElement.src = URL.createObjectURL(blob);
-              })
-              .catch(error => console.error('Error fetching the random photo:', error));
-      }
-
-      document.addEventListener('DOMContentLoaded', (event) => {
-          getRandomPhoto();
-      });
-  </script>
-
-  <script src="JS/button.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imagen de Picsum</title>
+    </head>
+    <body>
+        <h1>Imagen aleatoria de Picsum</h1>
+        <img id="picsum-image" alt="Imagen de Picsum" />
+        <script>
+            async function fetchImage() {
+                try {
+                    const response = await fetch('http://127.0.0.1:5000/get_image');
+                    if (response.redirected) {
+                        document.getElementById('picsum-image').src = response.url;
+                    }
+                } catch (error) {
+                    console.error('Error fetching image:', error);
+                }
+            }
+    
+            window.onload = fetchImage;
+        </script>
+    
 </body>
 </html>
