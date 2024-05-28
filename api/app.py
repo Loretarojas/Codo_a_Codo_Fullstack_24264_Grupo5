@@ -1,25 +1,15 @@
+from flask import Flask, send_from_directory
 import os
 import random
-from flask import Flask, send_from_directory, render_template
 
-template_folder = os.path.abspath('../html')
+app = Flask(__name__)
 
-app = Flask(__name__, template_folder=template_folder)
-
-IMAGE_FOLDER = os.path.join('static', 'images')
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/random-photo')
-def random_photo():
-    photos_dir = os.path.join(app.static_folder, 'images')  
-    photos = os.listdir(photos_dir)
-    if not photos:
-        return "No photos found", 404
-    random_photo = random.choice(photos)
-    return send_from_directory(photos_dir, random_photo)
+@app.route('/random-photo', methods=['GET'])
+def get_random_photo():
+    image_folder = os.path.join(app.static_folder, 'images')
+    image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg')]
+    random_image = random.choice(image_files)
+    return send_from_directory(image_folder, random_image)
 
 if __name__ == '__main__':
     app.run(debug=True)
