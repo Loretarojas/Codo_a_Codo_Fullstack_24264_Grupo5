@@ -33,7 +33,14 @@
       <p class="parrafo-about">Nuestro equipo está comprometido en proporcionarte datos precisos y confiables sobre las mariposas, ya que creemos en la importancia de conservar y apreciar la biodiversidad que nos rodea.</p> 
       <p class="parrafo-about">¡Sumérgete en el universo de las mariposas con nosotros y descubre la magia que estas criaturas despliegan a lo largo y ancho del mundo! Siéntete libre de explorar, aprender y compartir tus hallazgos con otros entusiastas de las mariposas.</p>
       <p class="parrafo-about">¡Disfruta tu búsqueda y que las alas de estas maravillosas criaturas te inspiren!</p>
-      <img id="picsum-image" alt="Imagen de Picsum" />
+    </section>
+
+    <!-- Nueva sección para la imagen de Picsum -->
+    <section class="contenido-about">
+      <h2>Imagen aleatoria de Picsum</h2>
+      <img id="picsum-image" alt="Imagen aleatoria de Picsum" />
+      <br>
+      <button id="change-image-btn">Cambiar Imagen</button>
     </section>
 
     <section class="colaboradores-franja">
@@ -90,17 +97,20 @@
     </div>
   </footer>
   <script>
-    async function fetchImage() {
-      try {
-        const response = await fetch('http://127.0.0.1:5000/get_image');
-        if (response.redirected) {
-          document.getElementById('picsum-image').src = response.url;
-        }
-      } catch (error) {
-        console.error('Error fetching image:', error);
+      async function fetchImage() {
+          try {
+              const response = await fetch('http://127.0.0.1:5000/get_image');
+              if (response.redirected) {
+                  document.getElementById('picsum-image').src = response.url;
+              }
+          } catch (error) {
+              console.error('Error fetching image:', error);
+          }
       }
-    }
-    window.onload = fetchImage;
+
+      document.getElementById('change-image-btn').addEventListener('click', fetchImage);
+
+      window.onload = fetchImage;
   </script>
 </body>
 </html>
