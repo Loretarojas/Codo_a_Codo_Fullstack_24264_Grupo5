@@ -68,19 +68,6 @@
              </div> 
         </div>
     </section>
-
-    <section id="random-photo-section">
-        <h2>Mariposa del día</h2>
-        <img id="photo" src="" alt="Random Photo">
-        <br>
-        <button onclick="getRandomPhoto()">Cambiar</button>
-    </section>
-
-    <div class="contenedor-boton-busqueda">
-       <a href="./pages/butterflies.html" class="boton-busqueda">Ir al buscador</a>
-    </div>
-    </main> 
-
     <footer class="footer-common">
       <div class="go-top-container">
         <div class="go-top-button">
@@ -128,28 +115,6 @@
             </ul>
           </div>
     </footer>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Imagen de Picsum</title>
-    </head>
-    <body>
-        <h1>Imagen aleatoria de Picsum</h1>
-        <img id="picsum-image" alt="Imagen de Picsum" />
-        <script>
-            async function fetchImage() {
-                try {
-                    const response = await fetch('http://127.0.0.1:5000/get_image');
-                    if (response.redirected) {
-                        document.getElementById('picsum-image').src = response.url;
-                    }
-                } catch (error) {
-                    console.error('Error fetching image:', error);
-                }
-            }
-    
-            window.onload = fetchImage;
-        </script>
-    
+      
 </body>
 </html>
