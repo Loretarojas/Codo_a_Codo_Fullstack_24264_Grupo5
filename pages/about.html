@@ -99,7 +99,7 @@
   <script>
       async function fetchImage() {
           try {
-              const response = await fetch('http://127.0.0.1:5000/get_image');
+              const response = await fetch('https://picsum.photos/200/300');
               if (response.redirected) {
                   document.getElementById('picsum-image').src = response.url;
               }
