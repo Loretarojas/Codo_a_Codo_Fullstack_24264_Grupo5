@@ -14,12 +14,12 @@ def index():
 
 @app.route('/random-photo')
 def random_photo():
-    images = os.listdir(IMAGE_FOLDER)
-    if not images:
-        return "No images found", 404
-    
-    random_image = random.choice(images)
-    return send_from_directory(IMAGE_FOLDER, random_image)
+    photos_dir = os.path.join(app.static_folder, 'images')  
+    photos = os.listdir(photos_dir)
+    if not photos:
+        return "No photos found", 404
+    random_photo = random.choice(photos)
+    return send_from_directory(photos_dir, random_photo)
 
 if __name__ == '__main__':
     app.run(debug=True)
