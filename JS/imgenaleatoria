@@ -1,0 +1,18 @@
+// Número total de imágenes en la carpeta
+const totalImagenes = 22; // Cambia esto al número real de imágenes
+
+// Función para obtener el nombre de archivo de una imagen aleatoria
+function obtenerImagenAleatoria() {
+    const indiceAleatorio = Math.floor(Math.random() * totalImagenes) + 1;
+    return `${indiceAleatorio}.jpg`;
+}
+
+// Función para insertar la imagen aleatoria en el contenedor
+function mostrarImagenAleatoria() {
+    const contenedor = document.getElementById("imagen-aleatoria");
+    const nombreImagenAleatoria = obtenerImagenAleatoria();
+    contenedor.src = `img/especies/${nombreImagenAleatoria}`;
+}
+
+// Ejecuta la función cuando la página se cargue
+window.onload = mostrarImagenAleatoria;

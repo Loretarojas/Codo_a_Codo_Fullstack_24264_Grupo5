@@ -71,9 +71,9 @@
 
     <section id="random-photo-section">
         <h2>Mariposa del día</h2>
-        <img id="photo" src="" alt="Random Photo">
+        <img id='imagen-aleatoria' alt="Imagen del Día">
         <br>
-        <button onclick="getRandomPhoto()">Cambiar</button>
+        <button onclick="mostrarImagenAleatoria()">Cambiar</button>
     </section>
 
     <div class="contenedor-boton-busqueda">
@@ -128,23 +128,9 @@
             </ul>
           </div>
     </footer>
-   
-    <script>
-      function getRandomPhoto() {
-          fetch('/random-photo')
-              .then(response => response.blob())
-              .then(blob => {
-                  const imgElement = document.getElementById('photo');
-                  imgElement.src = URL.createObjectURL(blob);
-              })
-              .catch(error => console.error('Error fetching the random photo:', error));
-      }
-
-      document.addEventListener('DOMContentLoaded', (event) => {
-          getRandomPhoto();
-      });
-  </script>
-
   <script src="JS/button.js"></script>
+    
+  <script src="JS/imgenaleatoria"></script>
+ 
 </body>
 </html>
