@@ -71,7 +71,7 @@
 
     <section id="random-photo-section">
         <h2>Foto Aleatoria de Mariposa</h2>
-        <img id="photo" src="/random-photo" alt="Random Photo">
+        <img id="photo" src="" alt="Random Photo">
         <br>
         <button onclick="getRandomPhoto()">Obtener Otra Foto</button>
     </section>
@@ -131,8 +131,13 @@
    
     <script>
         function getRandomPhoto() {
-            const img = document.getElementById('photo');
-            img.src = '/random-photo?' + new Date().getTime(); // Evitar caché
+            fetch('/random-photo')
+                .then(response => response.blob())
+                .then(blob => {
+                    const img = document.getElementById('photo');
+                    img.src = URL.createObjectURL(blob);
+                })
+                .catch(error => console.error('Error fetching random photo:', error));
         }
 
         // Load a random photo when the page loads
