@@ -2,160 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="./CSS/styles-index.css">
-    <link rel="icon" href="./img/logo.ico"> 
-    <script src="https://kit.fontawesome.com/7500b894af.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <title>Fluttersearch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Photo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
+<body>
+    <h1>Random Photo</h1>
+    <img id="photo" src="/random-photo" alt="Random Photo">
+    <br>
+    <button onclick="getRandomPhoto()">Get Another Photo</button>
 
-<body class="body-index">
-    <header class="header-index">
-        <nav class="nav-index">
-            <input type="checkbox" id="menu">
-            <label for="menu" id="label"> ☰ </label>
-            <ul id="lista">
-                <li class = "pages-index"><a  href="./pages/about.html">Acerca de Nosotros</a></li>
-                <li class = "pages-index"><a  href="./pages/contact.html">Contacto</a></li>
-                <li class = "pages-index"><a  href = "./pages/butterflies.html" href="./pages/butterflies.html"> Mariposas</a></li>
-            </ul>
-        </nav>
-    </header>
-
-     <main class="main-index">
-      <section id="banner-index">
-        <h1 class="title-index">Fluttersearch<img class="img1" src="img/mundomariposa.png" alt="Imagen 1"></h1>
-        
-          <div class="banner__content"> 
-            <h3 class="main-subtitle">Bienvenido al buscador de mariposas</h3>
-            <p class="p1">Descubre y aprende sobre las mariposas más fascinantes del mundo. Explora nuestras imágenes y descripciones detalladas para identificar y conocer mejor estas hermosas criaturas.</p>
-            <div class="botones-contenedor">
-                <a href="#segunda-seccion" class="boton-bajar">Saber más</a>
-                <a href="./pages/butterflies.html" class="boton-bajar">Ir al buscador</a>
-            </div>
-        </div>
-    </section>
-        
-        <section id="segunda-seccion">
-            <h2>Saber Más</h2>
-            <p>En esta sección encontrarás más información sobre nuestro buscador.</p>
-            <div class="contenedor-index">
-                <div class="item-index">
-                  <img src="img/mundomariposa.png" alt="Imagen 1">
-                    <div class="info">
-                    <p>El mundo de las mariposas es vasto y fascinante, con miles de especies que habitan en diferentes ecosistemas alrededor del planeta. Desde los vibrantes colores de las mariposas tropicales hasta las sutiles tonalidades de las especies de clima templado, cada mariposa es un testimonio de la diversidad y la belleza de la naturaleza. Nuestro buscador te permite explorar esta increíble variedad, proporcionándote herramientas para identificar y aprender sobre las características únicas de cada especie.</p>
-                    </div> 
-                  </div>
-                <div class="item-index">
-                  <img src="img/basededatos.png" alt="Imagen 2">
-                    <div class="info">
-                    <p>Gracias a nuestra base de datos extensa y detallada, identificar mariposas nunca ha sido tan fácil. Simplemente ingresa las características que observas, como el color, tamaño, y patrón de las alas, y nuestro buscador te mostrará una lista de posibles coincidencias. Cada resultado viene acompañado de imágenes de alta calidad y descripciones exhaustivas para que puedas estar seguro de la identificación. Además, ofrecemos información sobre el hábitat y el comportamiento de cada especie para enriquecer tu conocimiento.</p>
-                    </div>  
-                  </div> 
-                <div class="item-index">
-                  <img src="img/naturaleza.png" alt="Imagen 3">
-                    <div class="info">
-                    <p>Nuestro objetivo no es solo ayudar a identificar mariposas, sino también promover su conservación. Las mariposas son indicadores importantes de la salud de los ecosistemas y muchas especies están amenazadas por la pérdida de hábitat y el cambio climático. A través de nuestra plataforma, esperamos educar a los usuarios sobre la importancia de proteger a estos maravillosos insectos. Proporcionamos recursos sobre cómo crear hábitats amigables para mariposas y cómo participar en proyectos de conservación locales e internacionales.</p>
-                    </div>
-                  </div>
-                <div class="item-index">
-                  <img src="img/comunidad.png" alt="Imagen 4">
-                  <div class="info"> 
-                    <p>Además de ser una herramienta educativa, nuestro buscador de mariposas es también una comunidad vibrante de entusiastas y expertos. Invitamos a los usuarios a compartir sus observaciones y fotos, contribuyendo a una base de datos colectiva que beneficia a todos. Participa en foros de discusión, comparte tus descubrimientos y aprende de otros apasionados por las mariposas. Juntos, podemos ampliar nuestro conocimiento y apreciación por estas increíbles criaturas, fomentando una red de apoyo para la conservación y el estudio de las mariposas.</p>
-                   </div> 
-                 </div> 
-            </div>
-        </section>
-
-        <section id="api-section">
-            <h2>Datos de la API</h2>
-            <div id="api-content" class="contenedor-index">
-                <!-- Los datos de la API se cargarán aquí -->
-            </div>
-        </section>
-
-        <div class="contenedor-boton-busqueda">
-         <a href="./pages/butterflies.html" class="boton-busqueda">Ir al buscador</a>
-         </div>
-    </main> 
-    <footer class="footer-common">
-      <div class="go-top-container">
-        <div class="go-top-button">
-          <i class="fas fa-chevron-up"></i>
-        </div>
-      </div>
-        <div class="footer-content">
-            <p>&copy; 2024 - Fluttersearch</p>
-            <div class="footer-icons">
-                <a href="#" class="icons">
-                    <i id="symbol" class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="#" class="icons">
-                    <i id="symbol" class="fa-brands fa-square-facebook"></i>
-                </a>
-                <a href="#" class="icons">
-                    <i id="symbol" class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" class="icons">
-                    <i id="symbol" class="fa-regular fa-envelope"></i>
-                </a>
-                <a href="#" class="icons">
-                    <i id="symbol" class="fa-solid fa-phone"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer p-1 bg-gradient">
-            <ul class="footer__list_p-3">
-              <li class="footer__list__item">
-                <a href="#" class="footer__list__item__link">Preguntas frecuentes</a>
-              </li>
-              <li class="footer__list__item">
-                <a href="./pages/contact.html" class="footer__list__item__link">Contáctanos</a>
-              </li>
-              <li class="footer__list__item">
-                <a href="#" class="footer__list__item__link">Términos y Condiciones</a>
-              </li>
-              <li class="footer__list__item">
-                <a href="#" class="footer__list__item__link">Privacidad</a>
-              </li>
-              <li class="footer__list__item">
-                <a href="./pages/about.html" class="footer__list__item__link">Estudiantes y académicos colaboradores</a>
-              </li>
-            </ul>
-          </div>
-    </footer>
-
-    <script src="JS/button.js"></script>
     <script>
-        // Llamada a la API y renderizado de datos
-        async function fetchButterflyData() {
-            try {
-                const response = await fetch('URL_DE_LA_API'); // Reemplaza 'URL_DE_LA_API' con la URL real
-                const data = await response.json();
-                const apiContent = document.getElementById('api-content');
-                
-                data.forEach(butterfly => {
-                    const butterflyItem = document.createElement('div');
-                    butterflyItem.classList.add('item-index');
-                    butterflyItem.innerHTML = `
-                        <img src="${butterfly.image}" alt="${butterfly.name}">
-                        <div class="info">
-                            <h3>${butterfly.name}</h3>
-                            <p>${butterfly.description}</p>
-                        </div>
-                    `;
-                    apiContent.appendChild(butterflyItem);
-                });
-            } catch (error) {
-                console.error('Error fetching data from API:', error);
-            }
+        function getRandomPhoto() {
+            const img = document.getElementById('photo');
+            img.src = '/random-photo?' + new Date().getTime(); // Evitar caché
         }
 
-        document.addEventListener('DOMContentLoaded', fetchButterflyData);
+        // Load a random photo when the page loads
+        window.onload = getRandomPhoto;
     </script>
 </body>
 </html>
+
