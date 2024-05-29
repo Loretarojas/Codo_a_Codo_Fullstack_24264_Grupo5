@@ -168,7 +168,7 @@ h3 {
     font-size: 30px;
 }
 
-.button {
+.boton-mariposa {
     border-radius: 7px;
     color: white;
     background-color: #223649;
@@ -179,6 +179,7 @@ h3 {
     padding-bottom: 5px;
     padding-right: 10px;
     margin-top: 10px;
+    border: none;
 }
 
 .contenedor-index{
@@ -194,7 +195,10 @@ h3 {
     width: 550px;
     height: 350px;
     max-width: 80%;
-    padding-top: 15px;
+    border-style: inset;
+    border-color: white;
+    border-width: thick;
+    margin-top: 15px;
 }
 
 .item-index {
