@@ -492,8 +492,14 @@ h3 {
       }
       
       #imagen-aleatoria {
-        max-width: 50%;
-        height: 50%;
+            width: 170px;
+            height: 110px;
+            max-width: 80%;
+            border-style: inset;
+            border-color: white;
+            border-width: thick;
+            margin-top: 15px;
+        
       }
 
       .contenedor-index {
