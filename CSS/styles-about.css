@@ -171,6 +171,11 @@ a {
     text-align: center;
 }
 
+#picsum-image {
+    width: 300px;
+    height: 450px;
+}
+
 #change-image-btn {
         border-radius: 7px;
         color:#223649;
@@ -230,8 +235,23 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+    .contenido-imagen-aleatoria {
+        display: grid;
+        min-width: 50%;
+        justify-content: center;
+        justify-items: center;
+        margin-left: 0px;
+    }
+
+    .contenido-about-title {
+        max-width: 50%;
+    }
+
+    #picsum-image {
+        max-width: 70%;
+    }
+
     .colaboradores-franja {
-        flex-wrap: nowrap; /* Mantener contenedores en una fila en dispositivos móviles */
         overflow-x: auto;
     }
     .persona-container {
@@ -243,6 +263,8 @@ a {
     .contenido-about {
         padding: 10px;
     }
+    
+    
 }
 
 @media only screen and (min-width: 768px) {
