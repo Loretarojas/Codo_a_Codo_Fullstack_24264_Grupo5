@@ -15,6 +15,7 @@ html, body {
 }
 
 .pages-index {
+    display: inline-block;
     padding: 15px;
     list-style: none;
 }
@@ -59,6 +60,7 @@ a {
     color: rgb(96, 139, 182);
 }
 
+
 .body-index {
     background-image: url("../IMG/fondo.jpeg");
    
@@ -75,7 +77,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
   }
 
   .title-index {
@@ -180,6 +181,7 @@ h3 {
     padding-right: 13px;
     margin-top: 10px;
     border: none;
+    cursor: pointer;
 }
 
 .contenedor-index{
@@ -253,24 +255,19 @@ h3 {
     border-radius: 5px;
 }
 
-
 /* Estilos para footer*/
 .footer-common {
     display: flex;
     flex-direction: column-reverse;
-    flex-wrap: wrap;
     align-content: stretch;
-    justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 0px;
     margin-top: 30px;
     text-align: center;
     color: white;
     background-color: #223649;
-    padding: 5px; 
+    padding: 5px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 .footer-content {
@@ -297,6 +294,10 @@ h3 {
     transform: scale(2.1);
 }
 
+.footer__list_p-3 {
+    display: flex;
+}
+
   .footer__list {
     display: flex;
     flex-flow: row wrap;
@@ -321,7 +322,6 @@ h3 {
   .footer__list__item__link:hover {
         transform: scale(1.1);
     }
-
 /*Button top */
 .go-top-container {
     position: fixed;
@@ -447,10 +447,13 @@ h3 {
         border-bottom: 1px solid grey;
       }
       .pages-index {
+        display: table-caption;
         padding: 15px;
         list-style: none;
         background-color:#315577;
     }
+
+   
     .main-index {
         display: flow-root;
     }
@@ -463,10 +466,14 @@ h3 {
         text-align: center;
         font-family: 'Playfair Display', serif;
         display: flex;
-        align-items: flex-end;
         margin-bottom: 50px;
         padding-left: 30px;
         padding-right: 25px;
+        min-width: 110%;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+    
       }
       .main-subtitle {
         width: 50%;
@@ -495,14 +502,11 @@ h3 {
         padding: 20px 30px;
       }
       #banner-index {
-         display: block;
+         display: inline-block;
       }
       .banner__content {
         display: inline;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
-        width: 40%;
       }
       .p1{
         padding-left: 30px;
@@ -510,6 +514,16 @@ h3 {
         width: 50%;
         text-align: left;
       }
+      
+      .botones-contenedor {
+        display: inline-grid;
+        justify-items: center;
+      }
+    
+      .boton-bajar {
+        margin-left: 25px;
+      }
+
       #segunda-seccion {
         width: 100%;
       }
@@ -553,13 +567,11 @@ h3 {
             height: 3.6rem;
         }
        
-}   
+    }
 
 
 @media only screen and (min-width: 768px) {
-        ul {
-            display: flex;
-        }
+        
 }
 
 

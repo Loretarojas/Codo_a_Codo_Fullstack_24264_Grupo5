@@ -197,38 +197,34 @@ a {
 /* Estilos para footer*/
 
 .footer-common {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 30px;
     text-align: center;
     color: white;
-    margin-top: 10px; 
-    margin-bottom: 20px;
     background-color: #223649;
-    padding:5px; 
-    border-radius: 10px
+    padding: 5px; 
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 
 .footer-content {
     background-color: #223649;
-    display: block;
+    display: inline-block;
     border-radius: 10px;
     padding: 20px 10px;
 }
 
-.footer-common p {
-    margin: 0;
-    
-}
 
-.footer-common .footer-icons {
-    margin-top: 20px;
-}
-
-.footer-common.icons {
-    color: white;
-    margin: 0 5px;
-}
-.mapa {
-    padding-top: 25px;
+.footer-icons {
+    margin-top: 10px;
+    padding-bottom: 25px;
 }
 
 .icons {
@@ -236,11 +232,19 @@ a {
     margin-left: 5px;
     text-decoration: none;
     color: white;
+    margin: 0 5px;
 }
-
 #symbol:hover {
     transform: scale(2.1);
 }
+
+.mapa {
+    padding-top: 25px;
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
     
     #menu {
