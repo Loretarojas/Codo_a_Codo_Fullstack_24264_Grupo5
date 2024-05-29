@@ -302,6 +302,8 @@ a {
     .mapa {
         width: 80%;
         padding-top: 25px;
+        border: 0;
+        place-self: center;
     }
 }
 
