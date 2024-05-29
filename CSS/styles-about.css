@@ -153,6 +153,40 @@ a {
     border-radius: 10px;
 }
 
+.contenido-imagen-aleatoria {
+    text-align:center;
+    width: 500px;
+    display: flow-root;
+    margin-top: 50px;
+    line-height: 1.5;
+    color: white;
+    background-color: #223649;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 250px;
+    width: 60%;
+}
+
+.contenido-about-title {
+    text-align: center;
+}
+
+#change-image-btn {
+        border-radius: 7px;
+        color:#223649;
+        background-color: white;
+        font-family: 'Playfair Display', serif;
+        font-weight: bolder;
+        font-family: 'Playfair Display', serif;
+        padding-left: 13px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-right: 13px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+}
+
 /* Estilos para footer */
 .footer-common {
     text-align: center;
