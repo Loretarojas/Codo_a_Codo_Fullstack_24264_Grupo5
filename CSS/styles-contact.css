@@ -204,11 +204,12 @@ a {
     background-color: #223649;
     padding:5px; 
     border-radius: 10px
+    
 }
 
 .footer-content {
     background-color: #223649;
-    display: inline-block;
+    display: block;
     border-radius: 10px;
     padding: 20px 10px;
 }
@@ -225,6 +226,9 @@ a {
 .footer-common.icons {
     color: white;
     margin: 0 5px;
+}
+.mapa {
+    padding-top: 25px;
 }
 
 .icons {
@@ -287,6 +291,16 @@ a {
     .form-contact input[type="text"] {
         display: block;
     }
+    .footer-content {
+        padding-right: 40px;
+        padding-left: 40px;
+        display: grid;
+        justify-content: center;
+    }
+    .mapa {
+        width: 80%;
+        padding-top: 25px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -294,3 +308,4 @@ a {
             display: flex;
         }
 }
+
