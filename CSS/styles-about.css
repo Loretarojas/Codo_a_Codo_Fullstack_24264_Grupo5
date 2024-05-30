@@ -56,20 +56,19 @@ a {
     font-family: 'Roboto Condensed', serif;
 } 
 
-/* Estilos para la franja de colaboradores */
 .colaboradores-franja {
     display: flex;
-    justify-content: center; /* Centrar el contenedor */
-    align-items: center; /* Alinear verticalmente */
-    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
     margin-top: 50px;
-    padding: 0 20px; /* Añadir padding para asegurar que el contenedor completo se vea */
-    box-sizing: border-box; /* Asegurar que el padding se incluya en el ancho total */
-    flex-wrap: wrap; /* Ajustar para dispositivos móviles */
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    flex-wrap: wrap;
 }
 
 .persona-container {
-    width: 200px; /* Ajuste del ancho para mejor visualización */
+    width: 200px;
     text-align: center;
     margin-bottom: 20px;
     display: flex;
@@ -79,6 +78,7 @@ a {
     color: white;
     border-radius: 10px;
     padding: 10px;
+    height: 250px;
 }
 
 .persona {
