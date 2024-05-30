@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ENCABEZADO HOME **/
+•⁠ ⁠ {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+.pages-common {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pages-common:hover {
+    background-color: #0056b3;
+}
+
+.header-common {
+    background-color: #223649;
+    padding: 10px 0;
+}
+
+.nav-common {
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.nav-common a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.body-preguntas {
+    background-image: url("../IMG/fondo.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto Condensed', serif;
+}
+
+
+.main-pages {
+    max-width: 1200px;
+    /* Aumentar el ancho máximo para acomodar todas las tarjetas en una fila */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title-preguntas {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.contenido-preguntas {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    line-height: 1.5;
+    color: white;
+    background-color: #223649;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.contenido-preguntas-tema {
+    text-align: center;
+}
+
+/* Estilos para footer */
+.footer-common {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.footer-content {
+    background-color: #223649;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+.footer-common p {
+    margin: 0;
+}
+
+.footer-common .footer-icons {
+    margin-top: 20px;
+}
+
+.footer-common.icons {
+    color: white;
+    margin: 0 5px;
+}
+
+.icons {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+#symbol:hover {
+    transform: scale(2.1);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .contenido-preguntas-tema {
+        padding: 10px;
+    }
+
+
+   
+    .main-pages {
+        padding: 10px;
+    }
+
+    .contenido-preguntas {
+        padding: 10px;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+    ul {
+        display: flex;
+    }
+}
