@@ -56,7 +56,8 @@ def create_table_mariposas():
 	    gen VARCHAR(300) NOT NULL,
 	    especie VARCHAR(300) NOT NULL,
 	    ubicación VARCHAR(300) NOT NULL,
-        completada BOOLEAN NOT NULL
+        completada BOOLEAN NOT NULL,
+        fecha_creacion DATE NOT NULL
     );
     """
 )
