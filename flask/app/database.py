@@ -44,3 +44,23 @@ def test_connection():
 
     cur.close()
     conn.close()
+
+def create_table_mariposas():
+    conn = psycopg2.connect(**DATABASE_CONFIG)
+    cur = conn.cursor()
+    cur.execute(
+    """
+    CREATE TABLE IF NOT EXISTS Mariposas (
+	    id SERIAL PRIMARY KEY,
+	    familia VARCHAR(50) NOT NULL,
+	    gen VARCHAR(300) NOT NULL,
+	    especie VARCHAR(300) NOT NULL,
+	    ubicación VARCHAR(300) NOT NULL,
+        completada BOOLEAN NOT NULL
+    );
+    """
+)
+    conn.commit()
+
+    cur.close()
+    conn.close()
