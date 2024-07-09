@@ -2,8 +2,10 @@ import os
 import psycopg2
 from flask import g
 from dotenv import load_dotenv
+
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
+
 # Configuración de la base de datos usando variables de entorno
 DATABASE_CONFIG = {
     'user': os.getenv('DB_USERNAME'),
@@ -15,33 +17,24 @@ DATABASE_CONFIG = {
 
 # Función para obtener la conexión a la base de datos
 def get_db():
-# Si 'db' no está en el contexto global de Flask 'g'
     if 'db' not in g:
-# Crear una nueva conexión a la base de datos y guardarla en 'g'
         g.db = psycopg2.connect(**DATABASE_CONFIG)
-# Retornar la conexión a la base de datos
     return g.db
 
 # Función para cerrar la conexión a la base de datos
 def close_db(e=None):
-# Extraer la conexión a la base de datos de 'g' y eliminarla
     db = g.pop('db', None)
-# Si la conexión existe, cerrarla
     if db is not None:
         db.close()
 
 # Función para inicializar la aplicación con el manejo de la base de datos
 def init_app(app):
-# Registrar 'close_db' para que se ejecute al final del contexto de la aplicación
     app.teardown_appcontext(close_db)
 
 def test_connection():
     conn = psycopg2.connect(**DATABASE_CONFIG)
-
     cur = conn.cursor()
-
     conn.commit()
-
     cur.close()
     conn.close()
 
@@ -49,36 +42,33 @@ def create_table_mariposas():
     conn = psycopg2.connect(**DATABASE_CONFIG)
     cur = conn.cursor()
     cur.execute(
-    """
-    CREATE TABLE IF NOT EXISTS Mariposas (
-	    id SERIAL PRIMARY KEY,
-	    familia VARCHAR(50) NOT NULL,
-	    gen VARCHAR(300) NOT NULL,
-	    especie VARCHAR(300) NOT NULL,
-	    ubicacion VARCHAR(300) NOT NULL,
-        completada BOOLEAN NOT NULL,
-        fecha_creacion DATE NOT NULL
-    );
-    """
-)
-    
-    
+        """
+        CREATE TABLE IF NOT EXISTS mariposas (
+            id SERIAL PRIMARY KEY,
+            familia VARCHAR(50) NOT NULL,
+            gen VARCHAR(300) NOT NULL,
+            especie VARCHAR(300) NOT NULL,
+            ubicacion VARCHAR(300) NOT NULL,
+            completada BOOLEAN NOT NULL,
+            fecha_creacion DATE NOT NULL
+        );
+        """
+    )
+    conn.commit()
+    cur.close()
+    conn.close()
+
 def insertar_mariposas(familia, gen, especie, ubicacion, completada, fecha_creacion):
     conn = psycopg2.connect(**DATABASE_CONFIG)
     cur = conn.cursor()
     cur.execute(
-    # Ejecutamos una sentencia SQL que inserta una persona nueva en la tabla mariposas
-    """
-    INSERT INTO Mariposas
+        """
+        INSERT INTO mariposas
+            (familia, gen, especie, ubicacion, completada, fecha_creacion)
+            VALUES (%s, %s, %s, %s, %s, %s);
+        """,
         (familia, gen, especie, ubicacion, completada, fecha_creacion)
-        VALUES (%s, %s, %s, %s, %s, %s); 
-    """,
-      (familia, gen, especie, ubicacion, completada, fecha_creacion)
-)    
-
+    )
     conn.commit()
-
     cur.close()
     conn.close()
-
-
