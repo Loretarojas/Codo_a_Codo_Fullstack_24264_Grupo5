@@ -72,6 +72,15 @@ def update_consulta(mariposas_id):
     mariposas.save()
     return jsonify({'message': 'Query updated successfully'})
 
+def delete_mariposas(mariposas_id):
+    mariposas = Mariposas.get_by_id(mariposas_id)
+    if not mariposas:
+        return jsonify({'message': 'Mariposa not found'}), 404
+   
+    mariposas.delete()
+    return jsonify({'message': 'Mariposa deleted successfully'})
+
+
 def __complete_mariposas(mariposas_id, status):
     mariposas = Mariposas.get_by_id(mariposas_id)
     if not mariposas:

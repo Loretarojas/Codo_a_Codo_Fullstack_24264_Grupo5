@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 # Configuración de la base de datos usando variables de entorno
 DATABASE_CONFIG = {
-'user': os.getenv('DB_USERNAME'),
-'password': os.getenv('DB_PASSWORD'),
-'host': os.getenv('DB_HOST'),
-'database': os.getenv('DB_NAME'),
-'port': os.getenv('DB_PORT', 5432)
+    'user': os.getenv('DB_USERNAME'),
+    'password': os.getenv('DB_PASSWORD'),
+    'host': os.getenv('DB_HOST'),
+    'database': os.getenv('DB_NAME'),
+    'port': os.getenv('DB_PORT', 5432)
 }
 
 # Función para obtener la conexión a la base de datos
@@ -55,13 +55,30 @@ def create_table_mariposas():
 	    familia VARCHAR(50) NOT NULL,
 	    gen VARCHAR(300) NOT NULL,
 	    especie VARCHAR(300) NOT NULL,
-	    ubicación VARCHAR(300) NOT NULL,
+	    ubicacion VARCHAR(300) NOT NULL,
         completada BOOLEAN NOT NULL,
         fecha_creacion DATE NOT NULL
     );
     """
 )
+    
+    
+def insertar_mariposas(familia, gen, especie, ubicacion, completada, fecha_creacion):
+    conn = psycopg2.connect(**DATABASE_CONFIG)
+    cur = conn.cursor()
+    cur.execute(
+    # Ejecutamos una sentencia SQL que inserta una persona nueva en la tabla mariposas
+    """
+    INSERT INTO Mariposas
+        (familia, gen, especie, ubicacion, completada, fecha_creacion)
+        VALUES (%s, %s, %s, %s, %s, %s); 
+    """,
+      (familia, gen, especie, ubicacion, completada, fecha_creacion)
+)    
+
     conn.commit()
 
     cur.close()
     conn.close()
+
+

@@ -78,15 +78,15 @@ class Mariposas:
     def save(self):
         db = get_db()
         cursor = db.cursor()
-        if self.id_mariposas: # Actualizar Tarea existente
+        if self.id_mariposas: # Actualizar 
             cursor.execute(
                 """
                 UPDATE mariposas
                 SET familia = %s, gen = %s, especie = %s, completada = %s
                 WHERE id = %s
                 """,
-                (self.familia, self.gen, self.especie, self.completada, self.id_task))
-        else: # Crear Tarea nueva
+                (self.familia, self.gen, self.especie, self.completada, self.id_mariposas))
+        else: # Crear 
             cursor.execute(
                 """
                 INSERT INTO mariposas
@@ -94,7 +94,15 @@ class Mariposas:
                 VALUES (%s, %s, %s, %s, %s)
                 """,
                 (self.familia, self.gen, self.especie, self.ubicacion, self.completada, self.fecha_creacion))
-            self.id_task = cursor.lastrowid
+            self.id_mariposas = cursor.lastrowid
+        db.commit()
+        cursor.close()
+
+
+    def delete(self):
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute("UPDATE tareas SET activa = false WHERE id = %s", (self.id_mariposas,))
         db.commit()
         cursor.close()
 
