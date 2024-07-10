@@ -15,7 +15,7 @@
         <nav class="nav-common">
           <a class="pages-common" href="../index.html">Home</a>
         </nav>
-      </header>
+    </header>
 
     <main class="main-pages">
         <div class="container">
@@ -97,5 +97,40 @@
                     </div>
                 </div>
             </footer>
+
+    <script>
+        async function enviarConsulta(event) {
+            event.preventDefault();
+            const form = document.getElementById('formularioContacto');
+            const formData = new FormData(form);
+
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            try {
+                const response = await fetch('http://localhost:5000/contacto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.querySelector('.success').style.display = 'block';
+                    document.querySelector('.error').style.display = 'none';
+                } else {
+                    document.querySelector('.error').style.display = 'block';
+                    document.querySelector('.success').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.querySelector('.error').style.display = 'block';
+                document.querySelector('.success').style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
