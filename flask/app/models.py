@@ -1,15 +1,16 @@
 from app.database import get_db
 
 class Contacto:
-    def __init__(self, id=None, nombre=None, correo=None, asunto=None, mensaje=None, informacion=None, pais=None, consultaTipo=None):
+    def __init__(self, id=None, nombre=None, especie=None, familia=None, nombreCientifico=None, pais=None, peligroExtincion=None, migratoria=None):
         self.id = id
         self.nombre = nombre
-        self.correo = correo
-        self.asunto = asunto
-        self.mensaje = mensaje
-        self.informacion = informacion
+        self.especie = especie
+        self.familia = familia
+        self.nombreCientifico = nombreCientifico
         self.pais = pais
-        self.asunto = consultaTipo
+        self.peligroExtincion = peligroExtincion
+        self.migratoria = migratoria
+
 
     @staticmethod
     def __get_contacto_by_query(query):
@@ -24,12 +25,12 @@ class Contacto:
                 Contacto(
                     id=row[0],
                     nombre=row[1],
-                    correo=row[2],
-                    asunto=row[3],
-                    mensaje=row[4],
-                    informacion=row[5],
-                    pais=row[6],
-                    consultaTipo=row[7]
+                    especie=row[2],
+                    familia=row[3],
+                    nombreCientifico=row[4],
+                    pais=row[5],
+                    peligroExtincion=row[6],
+                    migratoria=row[7]
                 )
             )
         cursor.close()
@@ -41,7 +42,7 @@ class Contacto:
             """
                 SELECT * 
                 FROM contacto 
-                ORDER BY asunto DESC
+                ORDER BY especie DESC
             """
         )
     @staticmethod
@@ -50,7 +51,7 @@ class Contacto:
             """
                 SELECT * 
                 FROM contacto 
-                WHERE informacion = false
+                WHERE peligroExtincion = false
                 ORDER BY nombre DESC
             """
         ) 
@@ -70,12 +71,12 @@ class Contacto:
             return Contacto(
                 id=row[0],
                 nombre=row[1],
-                correo=row[2],
-                asunto=row[3],
-                mensaje=row[4],
-                informacion=row[5],
-                pais=row[6],
-                consultaTipo=row[7]
+                especie=row[2],
+                familia=row[3],
+                nombreCientifico=row[4],
+                pais=row[5],
+                peligroExtincion=row[6],
+                migratoria=row[7]
             )
         return None
     
@@ -86,18 +87,18 @@ class Contacto:
             cursor.execute(
                 """
                 UPDATE contacto
-                SET nombre = %s, correo = %s, mensaje = %s, informacion = %s
+                SET nombre = %s, especie = %s, familia = %s, nombreCientifico = %s
                 WHERE id = %s
                 """,
-                (self.nombre, self.correo, self.mensaje, self.informacion, self.id))
+                (self.nombre, self.especie, self.familia, self.nombreCientifico,  self.id))
         else: 
             cursor.execute(
                 """
                 INSERT INTO contacto
-                (nombre, correo, asunto, mensaje, informacion)
+                (nombre, especie, familia, nombreCientifico, peligroExtincion)
                 VALUES (%s, %s, %s, %s, %s)
                 """,
-                (self.nombre, self.correo, self.asunto, self.mensaje, self.informacion))
+                (self.nombre, self.especie, self.familia, self.nombreCientifico, self.peligroExtincion))
             self.id = cursor.lastrowid
         db.commit()
         cursor.close()
@@ -105,7 +106,7 @@ class Contacto:
     def delete(self):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("UPDATE contacto SET informacion = false WHERE id = %s", (self.id,))
+        cursor.execute("UPDATE contacto SET peligroExtincion = false WHERE id = %s", (self.id,))
         db.commit()
         cursor.close()
 
@@ -113,10 +114,10 @@ class Contacto:
         return {
             'id': self.id,
             'nombre': self.nombre,
-            'correo': self.correo,
-            'asunto': self.asunto,
-            'mensaje': self.mensaje,
-            'informacion': self.informacion,
+            'especie': self.especie,
+            'familia': self.familia,
+            'nombreCientifico': self.nombreCientifico,
             'pais': self.pais,
-
+            'peligroExtincion': self.peligroExtincion,
+            'migratoria': self.migratoria
         }

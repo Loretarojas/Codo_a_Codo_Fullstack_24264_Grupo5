@@ -55,12 +55,12 @@ def crear_contacto():
     CREATE TABLE IF NOT EXISTS Contacto (
         id SERIAL PRIMARY KEY,
         nombre VARCHAR(50) NOT NULL,
-        correo VARCHAR(300) NOT NULL,
-        asunto VARCHAR(300) NOT NULL,
-        mensaje VARCHAR(300) NOT NULL,
-        informacion  BOOLEAN NOT NULL,
+        especie VARCHAR(300) NOT NULL,
+        familia VARCHAR(300) NOT NULL,
+        nombreCientifico VARCHAR(300) NOT NULL,
         pais VARCHAR(300) NOT NULL,
-        consultaTipo VARCHAR(300) NOT NULL
+        peligroExtincion BOOLEAN NOT NULL,
+        migratoria BOOLEAN NOT NULL
     );
     """
 )
@@ -69,17 +69,4 @@ def crear_contacto():
     conn.close()
 
 
-def insertar_contacto(nombre, correo, asunto, mensaje, informacion, pais, consultaTipo):
-    conn = psycopg2.connect(**DATABASE_CONFIG)
-    cur = conn.cursor()
-    cur.execute(
-        """
-        INSERT INTO contacto
-            (nombre, correo, asunto, mensaje, informacion, pais, consultaTipo)
-            VALUES (%s, %s, %s, %s, %s, %s, %s);
-        """,
-        (nombre, correo, asunto, mensaje, informacion, pais, consultaTipo)
-    )
-    conn.commit()
-    cur.close()
-    conn.close()
+

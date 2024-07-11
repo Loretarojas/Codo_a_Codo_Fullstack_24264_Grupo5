@@ -2,12 +2,6 @@ from flask import jsonify, request
 from .models import Contacto
 
 
-def index():
-    return jsonify({'message':
-        'Bienvenido API '})
-
-
-
 def get_completed_contacto():
     contactos = Contacto.get_all_contacto()
     return jsonify([contacto.serialize() for contacto in contactos])
@@ -26,12 +20,12 @@ def crear_contacto():
     data = request.json
     nuevo_contacto = Contacto(
         nombre=data['nombre'],
-        correo=data['correo'],
-        asunto=data['asunto'],
-        mensaje=data['mensaje'],
-        info=data.get('informacion', False),
+        especie=data['especie'],
+        familia=data['familia'],
+        nombreCientifico=data['nombreCientifico'],
         pais=data['pais'],
-        consultaTipo=data['consultaTipo']
+        peligroExtincion=data('peligroExtincion', False),
+        migratoria=data['migratoria']
     )
     nuevo_contacto.save()
     return jsonify({'message': 'Contacto creado exitosamente'}), 201
@@ -43,7 +37,7 @@ def actualizar_contacto(id):
         return jsonify({'message': 'contacto not found'}), 404
    data = request.json
    contacto.nombre = data['nombre'] 
-   contacto.informacion = data['informacion']
+   contacto.especie = data['especie']
    contacto.save()
    return jsonify({'message': 'contacto updated successfully'})
 
@@ -61,7 +55,7 @@ def __contacto(id, status):
     if not Contacto:
         return jsonify({'message': 'Contacto not found'}), 404
 
-    contacto.informacion = status
+    contacto.especie = status
     contacto.save()
     return jsonify({'message': 'Contacto updated successfully'})
 

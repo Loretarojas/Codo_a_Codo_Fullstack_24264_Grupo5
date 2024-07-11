@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask_cors import CORS
 
@@ -9,14 +10,14 @@ app = Flask(__name__)
 
 
 # Rutas de la API-REST
-app.route('/', methods=['GET'])(index)
+app.route('/', methods=['GET'])
 
 
 app.route('/contacto/', methods=['GET'])(get_completed_contacto)
 
 app.route('/contacto/fetch/<int:id>', methods=['GET'])(get_contacto)
 
-app.route('/contacto/create/', methods=['POST'])(crear_contacto)
+app.route('/contacto/', methods=['POST'])(crear_contacto)
 app.route('/contacto/update/<int:id>', methods=['PUT'])(actualizar_contacto)
 
 
@@ -26,7 +27,7 @@ app.route('/contacto/complete/reset/<int:id>', methods=['PUT'])(reset_contacto)
 
 crear_contacto()
 
-insertar_contacto('Laura', 'laura@gmail.com', 'consulta', 'abc', False, 'Argentina', 'Data')
+
 
 # Conexión a BDD
 init_app(app)
