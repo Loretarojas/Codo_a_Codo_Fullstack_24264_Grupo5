@@ -1,75 +1,72 @@
 from flask import jsonify, request
-from app.models import Mariposas
-from datetime import date
+from .models import Contacto
+
 
 def index():
-    return jsonify(
-        {
-            'mensaje': 'FlutterSearch'
-        }
-    )
+    return jsonify({'message':
+        'Bienvenido API '})
 
-def get_pending_mariposas():
-    mariposas = Mariposas.get_all_pending()
-    return jsonify([mariposa.serialize() for mariposa in mariposas])
 
-def get_completed_mariposas():
-    mariposas = Mariposas.get_all_completed()
-    return jsonify([mariposa.serialize() for mariposa in mariposas])
 
-def get_mariposas(mariposas_id):
-    mariposas = Mariposas.get_by_id(mariposas_id)
-    if not mariposas:
-        return jsonify({'message': 'Query not found'}), 404
-    return jsonify(mariposas.serialize())
+def get_completed_contacto():
+    contactos = Contacto.get_all_contacto()
+    return jsonify([contacto.serialize() for contacto in contactos])
 
-def create_consulta():
+def eliminar_contacto(id):
+    contactos = Contacto.eliminar_all_contacto(id)
+    return jsonify([contacto.serialize() for contacto in contactos])
+
+def get_contacto(id):
+    contacto = Contacto.get_by_id(id)
+    if not contacto:
+        return jsonify({'message': 'contacto not found'}), 404
+    return jsonify(contacto.serialize())
+
+def crear_contacto():
     data = request.json
-    new_mariposas = Mariposas(
-        familia=data['familia'],
-        gen=data['gen'],
-        especie=data['especie'],
-        ubicacion=data['ubicacion'],
-        completada=False,
-        fecha_creacion=date.today().strftime('%Y-%m-%d')
+    nuevo_contacto = Contacto(
+        nombre=data['nombre'],
+        correo=data['correo'],
+        asunto=data['asunto'],
+        mensaje=data['mensaje'],
+        info=data.get('informacion', False),
+        pais=data['pais'],
+        consultaTipo=data['consultaTipo']
     )
-    new_mariposas.save()
-    return jsonify({'message': 'Query created successfully'}), 201
+    nuevo_contacto.save()
+    return jsonify({'message': 'Contacto creado exitosamente'}), 201
 
-def update_consulta(mariposas_id):
-    mariposas = Mariposas.get_by_id(mariposas_id)
-    if not mariposas:
-        return jsonify({'message': 'Query not found'}), 404
+
+def actualizar_contacto(id):
+   contacto = Contacto.get_by_id(id)
+   if not contacto:
+        return jsonify({'message': 'contacto not found'}), 404
+   data = request.json
+   contacto.nombre = data['nombre'] 
+   contacto.informacion = data['informacion']
+   contacto.save()
+   return jsonify({'message': 'contacto updated successfully'})
+
+
+def eliminar_contacto(id):
+    contacto = Contacto.get_by_id(id)
+    if not contacto:
+        return jsonify({'message': 'Contacto not found'}), 404
     
-    data = request.json
-    mariposas.familia = data['familia']
-    mariposas.gen = data['gen']
-    mariposas.especie = data['especie']
-    mariposas.ubicacion = data['ubicacion']
-    mariposas.completada = data.get('completada', mariposas.completada)
-    mariposas.fecha_creacion = data.get('fecha_creacion', mariposas.fecha_creacion)
-    mariposas.save()
-    return jsonify({'message': 'Query updated successfully'})
+    contacto.delete()
+    return jsonify({'message': 'Contacto deleted successfully'})
 
-def delete_mariposas(mariposas_id):
-    mariposas = Mariposas.get_by_id(mariposas_id)
-    if not mariposas:
-        return jsonify({'message': 'Mariposa not found'}), 404
-   
-    mariposas.delete()
-    return jsonify({'message': 'Mariposa deleted successfully'})
+def __contacto(id, status):
+    contacto = Contacto.get_by_id(id)
+    if not Contacto:
+        return jsonify({'message': 'Contacto not found'}), 404
 
-def __complete_mariposas(mariposas_id, status):
-    mariposas = Mariposas.get_by_id(mariposas_id)
-    if not mariposas:
-        return jsonify({'message': 'Mariposa not found'}), 404
+    contacto.informacion = status
+    contacto.save()
+    return jsonify({'message': 'Contacto updated successfully'})
 
-    mariposas.completada = status
-    mariposas.save()
-    return jsonify({'message': 'Mariposas updated successfully'})
+def set_contacto(id):
+    return __contacto(id, True)
 
-def set_complete_mariposas(mariposas_id):
-    return __complete_mariposas(mariposas_id, True)
-
-def reset_complete_mariposas(mariposas_id):
-    return __complete_mariposas(mariposas_id, False)
+def reset_contacto(id):
+    return __contacto(id, False)
