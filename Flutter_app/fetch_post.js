@@ -7,7 +7,7 @@ submitButton.addEventListener("click", ()=>{
     }
     
     fetchData(
-        "http://localhost:5000/contacto/create/",
+        "http://localhost:5000/mariposa/create/",
         "POST",
         (data) => {
             document.querySelector("#formulario").reset();

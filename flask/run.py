@@ -13,20 +13,19 @@ app = Flask(__name__)
 app.route('/', methods=['GET'])
 
 
-app.route('/contacto/', methods=['GET'])(get_completed_contacto)
+app.route('/mariposa/', methods=['GET'])(get_completed_mariposa)
 
-app.route('/contacto/fetch/<int:id>', methods=['GET'])(get_contacto)
+app.route('/mariposa/fetch/<int:id>', methods=['GET'])(get_mariposa)
 
-app.route('/contacto/', methods=['POST'])(crear_contacto)
-app.route('/contacto/update/<int:id>', methods=['PUT'])(actualizar_contacto)
+app.route('/mariposa/', methods=['POST'])(crear_mariposa)
+app.route('/mariposa/update/<int:id>', methods=['PUT'])(actualizar_mariposa)
 
 
-app.route('/contacto/delete/<int:id>', methods=['DELETE'])(eliminar_contacto)
-app.route('/contacto/complete/set/<int:id>', methods=['PUT'])(set_contacto)
-app.route('/contacto/complete/reset/<int:id>', methods=['PUT'])(reset_contacto)
+app.route('/mariposa/delete/<int:id>', methods=['DELETE'])(eliminar_mariposa)
+app.route('/mariposa/complete/set/<int:id>', methods=['PUT'])(set_mariposa)
+app.route('/mariposa/complete/reset/<int:id>', methods=['PUT'])(reset_mariposa)
 
-crear_contacto()
-
+crear_mariposa()
 
 
 # Conexión a BDD

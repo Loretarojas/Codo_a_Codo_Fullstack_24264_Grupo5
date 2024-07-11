@@ -1,6 +1,6 @@
 from app.database import get_db
 
-class Contacto:
+class Mariposa:
     def __init__(self, id=None, nombre=None, especie=None, familia=None, nombreCientifico=None, pais=None, peligroExtincion=None, migratoria=None):
         self.id = id
         self.nombre = nombre
@@ -13,16 +13,16 @@ class Contacto:
 
 
     @staticmethod
-    def __get_contacto_by_query(query):
+    def __get_mariposa_by_query(query):
         db = get_db()
         cursor = db.cursor()
         cursor.execute(query)
         rows = cursor.fetchall()
     
-        contactos = []
+        mariposas = []
         for row in rows:
-            contactos.append(
-                Contacto(
+            mariposas.append(
+                Mariposa(
                     id=row[0],
                     nombre=row[1],
                     especie=row[2],
@@ -34,41 +34,40 @@ class Contacto:
                 )
             )
         cursor.close()
-        return contactos
+        return mariposas
 
     @staticmethod
-    def get_all_contacto():
-        return Contacto.__get_contacto_by_query(
+    def get_all_mariposa():
+        return Mariposa.__get_mariposa_by_query(
             """
                 SELECT * 
-                FROM contacto 
+                FROM mariposa 
                 ORDER BY especie DESC
             """
         )
     @staticmethod
-    def eliminar_all_contacto():
-        return Contacto.__get_contacto_by_query(
+    def eliminar_all_mariposa():
+        return Mariposa.__get_mariposa_by_query(
             """
                 SELECT * 
-                FROM contacto 
+                FROM mariposa 
                 WHERE peligroExtincion = false
                 ORDER BY nombre DESC
             """
         ) 
 
   
-  
     @staticmethod
     def get_by_id(id):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM contacto WHERE id = %s", (id,))
+        cursor.execute("SELECT * FROM mariposa WHERE id = %s", (id,))
 
         row = cursor.fetchone()
         cursor.close()
 
         if row:
-            return Contacto(
+            return Mariposa(
                 id=row[0],
                 nombre=row[1],
                 especie=row[2],
@@ -86,15 +85,15 @@ class Contacto:
         if self.id: 
             cursor.execute(
                 """
-                UPDATE contacto
+                UPDATE mariposa
                 SET nombre = %s, especie = %s, familia = %s, nombreCientifico = %s
                 WHERE id = %s
                 """,
-                (self.nombre, self.especie, self.familia, self.nombreCientifico,  self.id))
+                (self.nombre, self.especie, self.familia, self.nombreCientifico, self.id))
         else: 
             cursor.execute(
                 """
-                INSERT INTO contacto
+                INSERT INTO mariposa
                 (nombre, especie, familia, nombreCientifico, peligroExtincion)
                 VALUES (%s, %s, %s, %s, %s)
                 """,
@@ -106,7 +105,7 @@ class Contacto:
     def delete(self):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("UPDATE contacto SET peligroExtincion = false WHERE id = %s", (self.id,))
+        cursor.execute("UPDATE mariposa SET peligroExtincion = false WHERE id = %s", (self.id,))
         db.commit()
         cursor.close()
 

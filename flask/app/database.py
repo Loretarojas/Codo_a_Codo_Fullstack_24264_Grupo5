@@ -47,12 +47,12 @@ def test_connection():
     cur.close() 
     conn.close()
 
-def crear_contacto():
+def crear_mariposa():
     conn = psycopg2.connect(**DATABASE_CONFIG)
     cur = conn.cursor()
     cur.execute(
     """
-    CREATE TABLE IF NOT EXISTS Contacto (
+    CREATE TABLE IF NOT EXISTS Mariposa (
         id SERIAL PRIMARY KEY,
         nombre VARCHAR(50) NOT NULL,
         especie VARCHAR(300) NOT NULL,

@@ -1,24 +1,24 @@
 from flask import jsonify, request
-from .models import Contacto
+from .models import Mariposa
 
 
-def get_completed_contacto():
-    contactos = Contacto.get_all_contacto()
-    return jsonify([contacto.serialize() for contacto in contactos])
+def get_completed_mariposa():
+    mariposas = Mariposa.get_all_mariposa()
+    return jsonify([mariposa.serialize() for mariposa in mariposas])
 
-def eliminar_contacto(id):
-    contactos = Contacto.eliminar_all_contacto(id)
-    return jsonify([contacto.serialize() for contacto in contactos])
+def eliminar_mariposa(id):
+    mariposas = Mariposa.eliminar_all_mariposa(id)
+    return jsonify([mariposa.serialize() for mariposa in mariposas])
 
-def get_contacto(id):
-    contacto = Contacto.get_by_id(id)
-    if not contacto:
-        return jsonify({'message': 'contacto not found'}), 404
-    return jsonify(contacto.serialize())
+def get_mariposa(id):
+    mariposa = Mariposa.get_by_id(id)
+    if not mariposa:
+        return jsonify({'message': 'Mariposa no encontrada'}), 404
+    return jsonify(mariposa.serialize())
 
-def crear_contacto():
+def crear_mariposa():
     data = request.json
-    nuevo_contacto = Contacto(
+    nuevo_mariposa = Mariposa(
         nombre=data['nombre'],
         especie=data['especie'],
         familia=data['familia'],
@@ -27,40 +27,40 @@ def crear_contacto():
         peligroExtincion=data('peligroExtincion', False),
         migratoria=data['migratoria']
     )
-    nuevo_contacto.save()
-    return jsonify({'message': 'Contacto creado exitosamente'}), 201
+    nuevo_mariposa.save()
+    return jsonify({'message': 'Mariposa creada exitosamente'}), 201
 
 
-def actualizar_contacto(id):
-   contacto = Contacto.get_by_id(id)
-   if not contacto:
-        return jsonify({'message': 'contacto not found'}), 404
+def actualizar_mariposa(id):
+   mariposa = Mariposa.get_by_id(id)
+   if not mariposa:
+        return jsonify({'message': 'Mariposa no encontrada'}), 404
    data = request.json
-   contacto.nombre = data['nombre'] 
-   contacto.especie = data['especie']
-   contacto.save()
-   return jsonify({'message': 'contacto updated successfully'})
+   mariposa.nombre = data['nombre'] 
+   mariposa.especie = data['especie']
+   mariposa.save()
+   return jsonify({'message': 'Mariposa actualizada exitosamente'})
 
 
-def eliminar_contacto(id):
-    contacto = Contacto.get_by_id(id)
-    if not contacto:
-        return jsonify({'message': 'Contacto not found'}), 404
+def eliminar_mariposa(id):
+    mariposa = Mariposa.get_by_id(id)
+    if not mariposa:
+        return jsonify({'message': 'Mariposa no encontrada'}), 404
     
-    contacto.delete()
-    return jsonify({'message': 'Contacto deleted successfully'})
+    mariposa.delete()
+    return jsonify({'message': 'Mariposa eliminada exitosamente'})
 
-def __contacto(id, status):
-    contacto = Contacto.get_by_id(id)
-    if not Contacto:
-        return jsonify({'message': 'Contacto not found'}), 404
+def __mariposa(id, status):
+    mariposa = Mariposa.get_by_id(id)
+    if not Mariposa:
+        return jsonify({'message': 'Mariposa no encontrada'}), 404
 
-    contacto.especie = status
-    contacto.save()
-    return jsonify({'message': 'Contacto updated successfully'})
+    mariposa.especie = status
+    mariposa.save()
+    return jsonify({'message': 'Mariposa actualizada exitosamente'})
 
-def set_contacto(id):
-    return __contacto(id, True)
+def set_mariposa(id):
+    return __mariposa(id, True)
 
-def reset_contacto(id):
-    return __contacto(id, False)
+def reset_mariposa(id):
+    return __mariposa(id, False)

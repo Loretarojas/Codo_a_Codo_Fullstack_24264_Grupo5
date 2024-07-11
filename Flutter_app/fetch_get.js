@@ -1,32 +1,32 @@
-let container = document.querySelector(".container");
-let contactosCompleto = document.querySelector(".api-complete");
-let contactosId = document.querySelector(".api-id");
+let container = document.querySelector("");
+let mariposasCompleto = document.querySelector("");
+let mariposasId = document.querySelector("");
 
-let contacto_completo = contactosCompleto.cloneNode(true);
-let contacto_id = contactosId.cloneNode(true);
+let mariposa_completo = mariposasCompleto.cloneNode(true);
+let mariposa_id = mariposasId.cloneNode(true);
 
-contactosCompleto.remove();
-contactosId.remove();
+mariposasCompleto.remove();
+mariposasId.remove();
 
 fetchData(
-    "http://127.0.0.1:5000/contacto/",
+    "http://127.0.0.1:5000/mariposa/",
     "GET",
     (data) => {
         console.log(data);
 
-        let contactos = [];
+        let mariposas = [];
 
-        for(const contacto of data){
-            console.log(contacto);
+        for(const mariposa of data){
+            console.log(mariposa);
 
-            let newContacto = contacto_completo.cloneNode(true);
+            let newMariposa = mariposa_completo.cloneNode(true);
            
-            newContacto.querySelector(".contacto").innerHTML = contacto.id;
+            newMariposa.querySelector("").innerHTML = mariposa.id;
          
 
-            contactos.push(newContacto);
+            mariposas.push(newMariposa);
 
         }
-       container.replaceChildren(...contactos);                                                 
+       container.replaceChildren(...mariposas);                                                 
     }
  );
