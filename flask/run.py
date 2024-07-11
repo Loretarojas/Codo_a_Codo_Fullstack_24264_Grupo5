@@ -2,9 +2,8 @@
 from flask import Flask
 from flask_cors import CORS
 
-from app.views import *
-from app.database import *
-
+from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, set_mariposa, reset_mariposa
+from app.database import init_app, crear_mariposa as crear_tabla_mariposa
 
 app = Flask(__name__)
 
@@ -25,8 +24,7 @@ app.route('/mariposa/delete/<int:id>', methods=['DELETE'])(eliminar_mariposa)
 app.route('/mariposa/complete/set/<int:id>', methods=['PUT'])(set_mariposa)
 app.route('/mariposa/complete/reset/<int:id>', methods=['PUT'])(reset_mariposa)
 
-crear_mariposa()
-
+crear_tabla_mariposa()
 
 # Conexión a BDD
 init_app(app)
