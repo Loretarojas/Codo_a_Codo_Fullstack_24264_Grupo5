@@ -17,14 +17,13 @@ def get_mariposa(id):
 def crear_mariposa():
     data = request.json
     nuevo_mariposa = Mariposa(
-        id=None,
         nombre=data['nombre'],
         especie=data['especie'],
         familia=data['familia'],
         nombreCientifico=data['nombreCientifico'],
-        peligroExtincion=data.get('peligroExtincion', False),
         pais=data['pais'],
-        migratoria=data.get('migratoria', False)
+        peligroExtincion=False,
+        migratoria=False
     )
     nuevo_mariposa.save()
     return jsonify({'message': 'Mariposa creada exitosamente'}), 201
@@ -38,9 +37,9 @@ def actualizar_mariposa(id):
     mariposa.especie = data['especie']
     mariposa.familia = data['familia']
     mariposa.nombreCientifico = data['nombreCientifico']
-    mariposa.peligroExtincion = data.get('peligroExtincion', mariposa.peligroExtincion)
     mariposa.pais = data['pais']
-    mariposa.migratoria = data.get('migratoria', mariposa.migratoria)
+    mariposa.peligroExtincion = False
+    mariposa.migratoria = False
     mariposa.save()
     return jsonify({'message': 'Mariposa actualizada exitosamente'})
 

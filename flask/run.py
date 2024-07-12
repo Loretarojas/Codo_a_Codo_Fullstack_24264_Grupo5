@@ -16,7 +16,7 @@ app.route('/mariposa/', methods=['GET'])(get_completed_mariposa)
 
 app.route('/mariposa/fetch/<int:id>', methods=['GET'])(get_mariposa)
 
-app.route('/mariposa/', methods=['POST'])(crear_mariposa)
+app.route('/mariposa/create/', methods=['POST'])(crear_mariposa)
 app.route('/mariposa/update/<int:id>', methods=['PUT'])(actualizar_mariposa)
 
 
@@ -25,6 +25,7 @@ app.route('/mariposa/complete/set/<int:id>', methods=['PUT'])(set_mariposa)
 app.route('/mariposa/complete/reset/<int:id>', methods=['PUT'])(reset_mariposa)
 
 crear_tabla_mariposa()
+
 
 # Conexión a BDD
 init_app(app)
