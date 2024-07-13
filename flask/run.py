@@ -3,14 +3,14 @@
 from flask import Flask
 from flask_cors import CORS
 
-from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, set_mariposa, reset_mariposa
+from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, index, set_mariposa, reset_mariposa
 from app.database import init_app, crear_mariposa as crear_tabla_mariposa
 
 app = Flask(__name__)
 
 
 # Rutas de la API-REST
-
+app.route('/', methods=['GET'])(index)
 
 app.route('/mariposa/', methods=['GET'])(get_completed_mariposa)
 

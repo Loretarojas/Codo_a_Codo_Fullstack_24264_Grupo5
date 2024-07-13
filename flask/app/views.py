@@ -1,6 +1,8 @@
 from flask import jsonify, request
 from .models import Mariposa
 
+def index():
+    return jsonify({'message': 'Bienvenido a la API de Mariposas'})
 
 def get_completed_mariposa():
     mariposas = Mariposa.get_all_mariposa()
