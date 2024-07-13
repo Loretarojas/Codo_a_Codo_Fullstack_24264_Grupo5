@@ -1,12 +1,5 @@
-let container = document.querySelector("");
-let mariposasCompleto = document.querySelector("");
-let mariposasId = document.querySelector("");
+let container = document.querySelector(".container");
 
-let mariposa_completo = mariposasCompleto.cloneNode(true);
-let mariposa_id = mariposasId.cloneNode(true);
-
-mariposasCompleto.remove();
-mariposasId.remove();
 
 fetchData(
     "http://127.0.0.1:5000/mariposa/",
@@ -19,14 +12,19 @@ fetchData(
         for(const mariposa of data){
             console.log(mariposa);
 
-            let newMariposa = mariposa_completo.cloneNode(true);
-           
-            newMariposa.querySelector("").innerHTML = mariposa.id;
-         
+        let newMariposa = document.createElement("div");
 
-            mariposas.push(newMariposa);
+        newMariposa.querySelector(".nombre").innerHTML = mariposa.nombre;
+        newMariposa.querySelector(".especie").innerHTML = mariposa.especie;
+        newMariposa.querySelector(".familia").innerHTML = mariposa.familia;
+        newMariposa.querySelector(".nombrecientifico").innerHTML = mariposa.nombrecientifico;
+        newMariposa.querySelector(".informacion").innerHTML = mariposa.informacion;
+        newMariposa.querySelector(".pais").id = `pais-${mariposa.id}`;
+        newMariposa.querySelector("#migratoria").id = `migratoria-${mariposa.id}`;
 
+
+        mariposas.push(newMariposa);
         }
-       container.replaceChildren(...mariposas);                                                 
+
     }
  );

@@ -21,23 +21,23 @@
         <div class="container">
         <h1 class="title-carga">Cargá tus mariposas!</h1>
         <form class="form-carga" id="formularioCarga" onsubmit="subirMariposa(event)">
-            <label for="Nombre Mariposa">Nombre:</label>
-            <input type="text" id="mariposa" name="nombre" required>
+            <label for="nombre" >Nombre:</label>
+            <input type="text"  id="nombre" name="nombre" required>
 
-            <label for="especie">Especie:</label>
+            <label for="especie" class="especie">Especie:</label>
             <input type="text" id="especie" name="especie" required>
 
-            <label for="familia">Familia:</label>
+            <label for="familia" class="familia">Familia:</label>
             <input type="text" id="familia" name="familia" required>
 
-            <label for="nombrecientif">Nombre Científico:</label>
-            <input type="text" id="cientifico" name="cientifico" required>
+            <label for="nombrecientifico"class="nombrecientifico"  >Nombre Científico:</label>
+            <input type="text" id="nombrecientifico" name="nombrecientifico" required>
             
-            <label for="info">¿Es una especie en peligro de extinción?</label>
+            <label for="info" class="informacion">¿Es una especie en peligro de extinción?</label>
             <input type="checkbox" id="info" name="info">
 
-            <label for="pais">País en el que se encuentra:</label>
-            <select id="pais" name="pais">
+            <label for="pais-1" class="pais">País en el que se encuentra:</label>
+            <select id="pais-1" name="pais">
                 <option value="Argentina">Argentina</option>
                 <option value="Brasil">Brasil</option>
                 <option value="Chile">Chile</option>
@@ -45,8 +45,8 @@
                 <option value= "Otro">Otro </option>
             </select>
             <div class="radio-group">
-                <input type="radio" id="Migratoria" name="migratoria" value="migratoria">
-                <label for="migratoria">Migratoria</label>
+                <input type="radio"  id="migratoria-1" name="migratoria" value="migratoria">
+                <label for="migratoria-1">Migratoria</label>
             </div> 
 
             <button type="submit">Enviar Mariposa</button>
@@ -86,5 +86,8 @@
                     </div>
                 </div>
             </footer>
-</body>
+            
+            <script src="../Flutter_app/fetch_data.js"></script>
+            <script src="../Flutter_app/fetch_get.js"></script>
+    </body>
 </html>

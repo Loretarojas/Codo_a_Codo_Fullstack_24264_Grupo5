@@ -1,8 +1,6 @@
 from flask import jsonify, request
 from .models import Mariposa
 
-def index():
-    return 'Bienvenido a FlutterSearch!'
 
 def get_completed_mariposa():
     mariposas = Mariposa.get_all_mariposa()
