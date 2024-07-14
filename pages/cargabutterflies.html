@@ -20,36 +20,38 @@
     <main class="main-pages">
         <div class="container">
         <h1 class="title-carga">Cargá tus mariposas!</h1>
-        <form class="form-carga" id="formularioCarga" onsubmit="subirMariposa(event)">
-            <label for="nombre" >Nombre:</label>
+        <form class="form-carga" id="formularioCarga" method="post" onsubmit="subirMariposa(event)">
+            <label for="nombre" class="nombre"  >Nombre:</label>
             <input type="text"  id="nombre" name="nombre" required>
 
-            <label for="especie" class="especie">Especie:</label>
+            <label for="especie" class="especie" >Especie:</label>
             <input type="text" id="especie" name="especie" required>
 
             <label for="familia" class="familia">Familia:</label>
-            <input type="text" id="familia" name="familia" required>
+            <input type="text"  id="familia" name="familia" required>
 
-            <label for="nombrecientifico"class="nombrecientifico"  >Nombre Científico:</label>
-            <input type="text" id="nombrecientifico" name="nombrecientifico" required>
+            <label for="nombreCientifico" class="nombreCientifico">Nombre Científico:</label>
+            <input type="text" id="nombreCientifico" name="nombreCientifico" required>
             
-            <label for="info" class="informacion">¿Es una especie en peligro de extinción?</label>
-            <input type="checkbox" id="info" name="info">
-
-            <label for="pais-1" class="pais">País en el que se encuentra:</label>
-            <select id="pais-1" name="pais">
+            <label for="pais" class="pais">País en el que se encuentra:</label>
+            <select id="pais"  name="pais">
                 <option value="Argentina">Argentina</option>
                 <option value="Brasil">Brasil</option>
                 <option value="Chile">Chile</option>
                 <option value="Perú">Perú</option>
                 <option value= "Otro">Otro </option>
             </select>
+            
+            <label for="peligroExtincion" class="peligroExtincion">¿Es una especie en peligro de extinción?</label>
+            <input type="checkbox" id="peligroExtincion" name="peligroExtincion">
+
             <div class="radio-group">
-                <input type="radio"  id="migratoria-1" name="migratoria" value="migratoria">
-                <label for="migratoria-1">Migratoria</label>
+                <label for="migratoria" class="migratoria">Migratoria</label>
+                <input type="radio"  id="migratoria" name="migratoria" value="migratoria">
+                
             </div> 
 
-            <button type="submit">Enviar Mariposa</button>
+            <button type="submit" class="butterfly-search-button">Enviar Mariposa</button>
 
             <div class="error" style="display: none;">
                 <p>Por favor, completa todos los campos obligatorios.</p>
@@ -88,6 +90,11 @@
             </footer>
             
             <script src="../Flutter_app/fetch_data.js"></script>
+           
+            <script src="../Flutter_app/fetch_post.js"></script>
+
             <script src="../Flutter_app/fetch_get.js"></script>
+
+            
     </body>
 </html>
