@@ -22,8 +22,8 @@ def crear_mariposa():
         familia=data['familia'],
         nombreCientifico=data['nombreCientifico'],
         pais=data['pais'],
-        peligroExtincion=False,
-        migratoria=False
+        peligroExtincion=data.get('peligroExtincion', False),
+        migratoria=data.get('migratoria', False)
     )
     nuevo_mariposa.save()
     return jsonify({'message': 'Mariposa creada exitosamente'}), 201
@@ -38,8 +38,8 @@ def actualizar_mariposa(id):
     mariposa.familia = data['familia']
     mariposa.nombreCientifico = data['nombreCientifico']
     mariposa.pais = data['pais']
-    mariposa.peligroExtincion = False
-    mariposa.migratoria = False
+    mariposa.peligroExtincion = data.get('peligroExtincion', mariposa.peligroExtincion)
+    mariposa.migratoria = data.get('migratoria', mariposa.migratoria)
     mariposa.save()
     return jsonify({'message': 'Mariposa actualizada exitosamente'})
 
