@@ -17,18 +17,18 @@ class Mariposa:
     def eliminar_all_mariposa(id):
         db = get_db()
         cur = db.cursor()
-        cur.execute("DELETE FROM Mariposa WHERE id=%s;", (id,))
+        cur.execute("DELETE FROM mariposas WHERE id=%s;", (id,))
         db.commit()
-        cur.execute("SELECT id, nombre, especie, familia, nombreCientifico, pais, peligroExtincion, migratoria FROM Mariposa;")
+        cur.execute("SELECT id, nombre, especie, familia, nombrecientifico, pais, peligroextincion, migratoria FROM mariposas;")
         rows = cur.fetchall()
         cur.close()
         return [Mariposa(*row) for row in rows]
 
     @staticmethod
     def get_all_mariposa():
-        with get_db() as db:  
+        with get_db() as db:
             with db.cursor() as cur:
-                cur.execute("SELECT * FROM mariposas;") 
+                cur.execute("SELECT * FROM mariposas;")
                 rows = cur.fetchall()
                 return [Mariposa(*row) for row in rows]
 
@@ -59,5 +59,3 @@ class Mariposa:
         with get_db() as db:
             with db.cursor() as cur:
                 cur.execute("DELETE FROM mariposas WHERE id = %s;", (self.id,))
-    
-    

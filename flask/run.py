@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 
 from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, index, set_mariposa, reset_mariposa
-from app.database import init_app, crear_mariposa as crear_tabla_mariposa
+from app.database import init_app, create_table_on_startup
 
 app = Flask(__name__)
 
@@ -22,8 +22,8 @@ init_app(app)
 # Cors
 CORS(app)
 
-# Crear tabla si no existe
-crear_tabla_mariposa()
+# Crear tabla si no existe al inicio de la aplicación
+create_table_on_startup(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

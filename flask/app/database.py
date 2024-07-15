@@ -2,8 +2,8 @@ import os
 import psycopg2
 from flask import g
 from dotenv import load_dotenv
-load_dotenv()
 
+load_dotenv()
 
 DATABASE_CONFIG = {
     'user': os.getenv('DB_USERNAME'),
@@ -27,36 +27,33 @@ def init_app(app):
     app.teardown_appcontext(close_db)
 
 def test_connection():
-    conn = psycopg2.connect(**DATABASE_CONFIG) 
-
-    cur = conn.cursor() 
-    
-    conn.commit() 
-    
-    cur.close() 
+    conn = psycopg2.connect(**DATABASE_CONFIG)
+    cur = conn.cursor()
+    cur.execute('SELECT 1') 
+    cur.close()
     conn.close()
 
 def crear_mariposa():
     conn = psycopg2.connect(**DATABASE_CONFIG)
     cur = conn.cursor()
     cur.execute(
-    """
-    CREATE TABLE IF NOT EXISTS Mariposa (
-        id SERIAL PRIMARY KEY,
-        nombre VARCHAR(50) NOT NULL,
-        especie VARCHAR(300) NOT NULL,
-        familia VARCHAR(300) NOT NULL,
-        nombreCientifico VARCHAR(300) NOT NULL,
-        pais VARCHAR(300) NOT NULL,
-        peligroExtincion BOOLEAN NOT NULL,
-        migratoria BOOLEAN NOT NULL
-    );
-    """
-)
+        """
+        CREATE TABLE IF NOT EXISTS mariposas (
+            id SERIAL PRIMARY KEY,
+            nombre VARCHAR(50) NOT NULL,
+            especie VARCHAR(300) NOT NULL,
+            familia VARCHAR(300) NOT NULL,
+            nombrecientifico VARCHAR(300) NOT NULL,
+            pais VARCHAR(300) NOT NULL,
+            peligroextincion BOOLEAN NOT NULL,
+            migratoria BOOLEAN NOT NULL
+        );
+        """
+    )
     conn.commit()
     cur.close()
     conn.close()
 
-
-
-
+def create_table_on_startup(app):
+    with app.app_context():
+        crear_mariposa()
