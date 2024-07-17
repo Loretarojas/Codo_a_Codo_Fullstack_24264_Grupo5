@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 
 from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, index, set_mariposa, reset_mariposa
-from app.database import init_app, create_table_on_startup
+from app.database import init_app
 
 app = Flask(__name__)
 
@@ -11,10 +11,7 @@ app.route('/', methods=['GET'])(index)
 app.route('/mariposa/', methods=['GET'])(get_completed_mariposa)
 app.route('/mariposa/fetch/<int:id>', methods=['GET'])(get_mariposa)
 app.route('/mariposa/create/', methods=['POST'])(crear_mariposa)
-app.route('/mariposa/update/<int:id>', methods=['PUT'])(actualizar_mariposa)
-app.route('/mariposa/delete/<int:id>', methods=['DELETE'])(eliminar_mariposa)
-app.route('/mariposa/complete/set/<int:id>', methods=['PUT'])(set_mariposa)
-app.route('/mariposa/complete/reset/<int:id>', methods=['PUT'])(reset_mariposa)
+
 
 # Conexión a BDD
 init_app(app)
@@ -22,8 +19,6 @@ init_app(app)
 # Cors
 CORS(app)
 
-# Crear tabla si no existe al inicio de la aplicación
-create_table_on_startup(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -45,13 +45,13 @@ class Mariposa:
             with db.cursor() as cur:
                 if self.id is None:
                     cur.execute("""
-                        INSERT INTO mariposas (nombre, especie, familia, nombrecientifico, pais, peligroextincion, migratoria)
+                        INSERT INTO mariposas (nombre, especie, familia, nombreCientifico, pais, peligroExtincion, migratoria)
                         VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id;
                     """, (self.nombre, self.especie, self.familia, self.nombreCientifico, self.pais, self.peligroExtincion, self.migratoria))
                     self.id = cur.fetchone()[0]
                 else:
                     cur.execute("""
-                        UPDATE mariposas SET nombre=%s, especie=%s, familia=%s, nombrecientifico=%s, pais=%s, peligroextincion=%s, migratoria=%s
+                        UPDATE mariposas SET nombre=%s, especie=%s, familia=%s, nombreCientifico=%s, pais=%s, peligroExtincion=%s, migratoria=%s
                         WHERE id=%s;
                     """, (self.nombre, self.especie, self.familia, self.nombreCientifico, self.pais, self.peligroExtincion, self.migratoria, self.id))
 
