@@ -3,98 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/styles-cargabutterflies.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-cargabutterflies.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7500b894af.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="../img/logo.ico">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}">
     <title>Formulario de Contacto</title>
 </head>
 <body class="body-contact">
     <header class="header-common">
         <nav class="nav-common">
-          <a class="pages-common" href="../index.html">Home</a>
+          <a class="pages-common" href="{{ url_for('index') }}">Home</a>
         </nav>
-      </header>
+    </header>
 
     <main class="main-pages">
         <div class="container">
-        <h1 class="title-carga">Cargá tus mariposas!</h1>
-        <form class="form-carga" id="formularioCarga" method="post" onsubmit="subirMariposa(event)">
-            <label for="nombre" class="nombre"  >Nombre:</label>
-            <input type="text"  id="nombre" name="nombre" required>
+            <h1 class="title-carga">Cargá tus mariposas!</h1>
+            <form class="form-carga" id="formularioCarga" method="post" onsubmit="subirMariposa(event)">
+                <label for="nombre" class="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-            <label for="especie" class="especie" >Especie:</label>
-            <input type="text" id="especie" name="especie" required>
+                <label for="especie" class="especie">Especie:</label>
+                <input type="text" id="especie" name="especie" required>
 
-            <label for="familia" class="familia">Familia:</label>
-            <input type="text"  id="familia" name="familia" required>
+                <label for="familia" class="familia">Familia:</label>
+                <input type="text" id="familia" name="familia" required>
 
-            <label for="nombreCientifico" class="nombreCientifico">Nombre Científico:</label>
-            <input type="text" id="nombreCientifico" name="nombreCientifico" required>
-            
-            <label for="pais" class="pais">País en el que se encuentra:</label>
-            <select id="pais"  name="pais">
-                <option value="Argentina">Argentina</option>
-                <option value="Brasil">Brasil</option>
-                <option value="Chile">Chile</option>
-                <option value="Perú">Perú</option>
-                <option value= "Otro">Otro </option>
-            </select>
-            
-            <label for="peligroExtincion" class="peligroExtincion">¿Es una especie en peligro de extinción?</label>
-            <input type="checkbox" id="peligroExtincion" name="peligroExtincion">
+                <label for="nombreCientifico" class="nombreCientifico">Nombre Científico:</label>
+                <input type="text" id="nombreCientifico" name="nombreCientifico" required>
 
-            <div class="radio-group">
-                <label for="migratoria" class="migratoria">Migratoria</label>
-                <input type="radio"  id="migratoria" name="migratoria" value="migratoria">
-                
-            </div> 
+                <label for="pais" class="pais">País en el que se encuentra:</label>
+                <select id="pais" name="pais">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Perú">Perú</option>
+                    <option value="Otro">Otro</option>
+                </select>
 
-            <button type="submit" class="butterfly-search-button">Enviar Mariposa</button>
+                <label for="peligroExtincion" class="peligroExtincion">¿Es una especie en peligro de extinción?</label>
+                <input type="checkbox" id="peligroExtincion" name="peligroExtincion">
 
-            <div class="error" style="display: none;">
-                <p>Por favor, completa todos los campos obligatorios.</p>
-            </div>
+                <div class="radio-group">
+                    <label for="migratoria" class="migratoria">Migratoria</label>
+                    <input type="radio" id="migratoria" name="migratoria" value="migratoria">
+                </div>
 
-            <div class="success" style="display: none;">
-                <p>¡Mariposa enviada correctamente!</p>
-            </div>
-            
-        </form>
+                <button type="submit" class="butterfly-search-button">Enviar Mariposa</button>
+
+                <div class="error" style="display: none;">
+                    <p>Por favor, completa todos los campos obligatorios.</p>
+                </div>
+
+                <div class="success" style="display: none;">
+                    <p>¡Mariposa enviada correctamente!</p>
+                </div>
+            </form>
         </div>
     </main>
     <footer class="footer-common">
+        <div class="footer-content">
+            <p>&copy; 2024 - Fluttersearch</p>
+            <div class="footer-icons">
+                <a href="#" class="icons">
+                    <i id="symbol1" class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="icons">
+                    <i id="symbol2" class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#" class="icons">
+                    <i id="symbol3" class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="icons">
+                    <i id="symbol4" class="fa-regular fa-envelope"></i>
+                </a>
+                <a href="#" class="icons">
+                    <i id="symbol5" class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-        </section>
-             <div class="footer-content">
-                    <p>&copy; 2024 - Fluttersearch</p>
-                    <div class="footer-icons">
-                        <a href="#" class="icons">
-                            <i id="symbol1" class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="#" class="icons">
-                            <i id="symbol2" class="fa-brands fa-square-facebook"></i>
-                        </a>
-                        <a href="#" class="icons">
-                            <i id="symbol3" class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" class="icons">
-                            <i id="symbol4" class="fa-regular fa-envelope"></i>
-                        </a>
-                        <a href="#" class="icons">
-                            <i id="symbol5" class="fa-solid fa-phone"></i>
-                        </a>
-                    </div>
-                </div>
-            </footer>
-            
-            <script src="../Flutter_app/fetch_data.js"></script>
-           
-            <script src="../Flutter_app/fetch_post.js"></script>
-
-            <script src="../Flutter_app/fetch_get.js"></script>
-
-            
-    </body>
+    <script src="{{ url_for('static', filename='js/fetch_data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fetch_post.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/fetch_get.js') }}"></script>
+</body>
 </html>
