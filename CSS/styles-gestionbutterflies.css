@@ -1,0 +1,155 @@
+/* Import de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    min-height: 100%;
+    font-family: 'Roboto Condensed', sans-serif; /* Fallback font */
+}
+
+body {
+    min-height: 100%;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header-common {
+    background-color: #223649;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-common a {
+    color: white;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-common a:hover {
+    background-color: #0056b3;
+}
+
+/* Body */
+.body-contact {
+    background-image: url("../IMG/fondo.jpeg");
+
+}
+
+/* Main Container */
+.main-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container-gestionmariposas {
+
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    color: white;
+}
+
+.title-carga {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #223649;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+#container-tabla-carga {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    background-color: #223649;
+    padding: 50px;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    display: table-caption;
+}
+
+.tabla-datos {
+    font-family: 'Roboto Condensed', serif;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+}
+
+
+.contenedor-boton-agregar {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 70%;
+    padding: 0.5em 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.boton-agregar {
+    width: 100%;
+    padding: 15px;
+    background-color: #223649;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-agregar:hover {
+    background-color: #0056b3;
+}
+
+
+/* Footer */
+.footer-common {
+    background-color: #223649;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.icons {
+    margin: 0 5px;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.icons:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .footer-content {
+        padding:20px;
+}
+}

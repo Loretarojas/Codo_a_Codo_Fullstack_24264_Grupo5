@@ -1,4 +1,3 @@
-
 import os
 import psycopg2
 from flask import g
@@ -53,15 +52,13 @@ def crear_mariposa():
     cur = conn.cursor()
     cur.execute(
        """
-        CREATE TABLE IF NOT EXISTS mariposas (
+        CREATE TABLE IF NOT EXISTS Mariposas (
             id SERIAL PRIMARY KEY,
             nombre VARCHAR(50) NOT NULL,
             especie VARCHAR(300) NOT NULL,
             familia VARCHAR(300) NOT NULL,
-            nombrecientifico VARCHAR(300) NOT NULL,
-            pais VARCHAR(300) NOT NULL,
-            peligroextincion BOOLEAN NOT NULL,
-            migratoria BOOLEAN NOT NULL
+            nombreCientifico VARCHAR(300) NOT NULL,
+            pais VARCHAR(300) NOT NULL
         );
         """
     )
@@ -69,3 +66,18 @@ def crear_mariposa():
    
     cur.close()
     conn.close()
+
+def insertar_mariposa(nombre, especie, familia, nombreCientifico, pais):
+    conn = psycopg2.connect(**DATABASE_CONFIG)
+    cur = conn.cursor()
+    cur.execute(
+        """
+        INSERT INTO Mariposas 
+            (nombre, especie, familia, nombreCientifico, pais)
+            VALUES (%s, %s, %s, %s, %s);
+        """,
+            (nombre, especie, familia, nombreCientifico, pais)
+    )
+    conn.commit()
+    cur.close()
+    conn.close()    

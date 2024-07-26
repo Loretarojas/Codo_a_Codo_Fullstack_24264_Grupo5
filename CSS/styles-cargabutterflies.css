@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* General */
@@ -58,7 +59,7 @@ a {
     padding: 20px;
 }
 
-.container {
+.container-cargamariposas {
     background-color: rgba(34, 54, 73, 0.8);
     border-radius: 10px;
     padding: 20px;
@@ -68,21 +69,31 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Form Title */
+
 .title-carga {
     text-align: center;
+    color: white;
+    margin-top: 10px;
     margin-bottom: 20px;
     background-color: #223649;
-    padding: 10px; 
+    padding: 5px;
     border-radius: 10px;
     font-family: 'Playfair Display', serif;
 }
 
+
 /* Form */
+.form-carga {
+    background-color: #223649;
+    padding: 50px;
+    border-radius: 10px;
+    font-family: 'Roboto Condensed', serif;
+}
 .form-carga label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: aliceblue;
 }
 
 .form-carga input[type="text"],
@@ -112,6 +123,10 @@ a {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+#migratoria{
+    display: block;
 }
 
 .form-carga button {

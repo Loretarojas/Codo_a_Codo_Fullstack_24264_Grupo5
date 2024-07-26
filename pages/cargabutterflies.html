@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/styles-cargabutterflies.css">
+    <link rel="stylesheet" href="../CSS/styles-cargabutterflies.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7500b894af.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.ico') }}">
+    <link rel="icon" href="../img/logo.ico">
     <title>Formulario de Contacto</title>
 </head>
 <body class="body-contact">
     <header class="header-common">
         <nav class="nav-common">
-          <a class="pages-common" href="{{ url_for('index') }}">Home</a>
+          <a class="pages-common" href="../index.html">Home</a>
         </nav>
     </header>
 
     <main class="main-pages">
         <div class="container">
             <h1 class="title-carga">Cargá tus mariposas!</h1>
-            <form class="form-carga" id="formularioCarga" method="post" onsubmit="subirMariposa(event)">
+            <form  id="form-carga" method="POST" class="form-carga">
                 <label for="nombre" class="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -41,17 +41,7 @@
                     <option value="Perú">Perú</option>
                     <option value="Otro">Otro</option>
                 </select>
-
-                <label for="peligroExtincion" class="peligroExtincion">¿Es una especie en peligro de extinción?</label>
-                <input type="checkbox" id="peligroExtincion" name="peligroExtincion">
-
-                <div class="radio-group">
-                    <label for="migratoria" class="migratoria">Migratoria</label>
-                    <input type="radio" id="migratoria" name="migratoria" value="migratoria">
-                </div>
-
-                <button type="submit" class="butterfly-search-button">Enviar Mariposa</button>
-
+                <button type="button" id="butterfly-search-button" title="butterfly-search-button">Enviar Mariposa</button>
                 <div class="error" style="display: none;">
                     <p>Por favor, completa todos los campos obligatorios.</p>
                 </div>
@@ -62,6 +52,7 @@
             </form>
         </div>
     </main>
+
     <footer class="footer-common">
         <div class="footer-content">
             <p>&copy; 2024 - Fluttersearch</p>
@@ -85,8 +76,13 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/fetch_data.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/fetch_post.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/fetch_get.js') }}"></script>
+    <script src="../flutter_app/js/fetch_data.js"></script>
+
+
+    <script src="../flutter_app/js/fetch_post.js"></script>
+
+    <script src="../flutter_app/js/fetch_get.js"></script>
+
+
 </body>
 </html>

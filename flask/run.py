@@ -1,17 +1,47 @@
 from flask import Flask
 from flask_cors import CORS
 
-from app.views import get_completed_mariposa, get_mariposa, crear_mariposa, actualizar_mariposa, eliminar_mariposa, index, set_mariposa, reset_mariposa
-from app.database import init_app
+from app.views import *
+from app.database import *
 
 app = Flask(__name__)
 
-# Rutas de la API-REST
-app.route('/', methods=['GET'])(index)
-app.route('/mariposa/', methods=['GET'])(get_completed_mariposa)
-app.route('/mariposa/fetch/<int:id>', methods=['GET'])(get_mariposa)
-app.route('/mariposa/create/', methods=['POST'])(crear_mariposa)
 
+
+#CRUD
+@app.route('/api/mariposa/', methods=['GET'])
+def get_completed_mariposas():
+    mariposas = Mariposa.get_all_mariposa()
+    return jsonify([mariposa.serialize() for mariposa in mariposas])
+
+@app.route('/api/mariposa/fetch/<int:id>', methods=['GET'])
+def get_mariposa(id):
+    mariposa = Mariposa.get_by_id(id)
+    if mariposa:
+        return jsonify(mariposa.serialize())
+    else:
+        return jsonify(message='Mariposa no encontrada'), 404
+
+@app.route('/api/mariposa/create/', methods=['POST'])
+def create_mariposa():
+    data = request.json
+    nuevo_mariposa = Mariposa(
+        nombre=data['nombre'],
+        especie=data['especie'],
+        familia=data['familia'],
+        nombreCientifico=data['nombreCientifico'],
+        pais=data['pais']
+  
+    )
+    nuevo_mariposa.save() 
+    return jsonify(message='Mariposa creada'), 200
+
+
+
+app.route('/api/mariposa/complete/set/<int:id>', methods=['PUT'])(set_mariposa)
+app.route('/api/mariposa/complete/reset/<int:id>', methods=['PUT'])(reset_mariposa)
+
+#crear_mariposa()
 
 # Conexión a BDD
 init_app(app)
